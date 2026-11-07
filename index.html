@@ -255,7 +255,7 @@
       }
       .install-steps .s strong { color: var(--ink); display: block; margin-bottom: 4px; font-size: 0.95rem; }
 
-      footer {
+      .download-actions { display: flex; flex-direction: column; gap: 14px; } .download-actions .btn { width: 100%; justify-content: center; flex-shrink: 0; } @media (min-width: 760px) { .download-actions { flex-direction: row; gap: 18px; justify-content: center; flex-wrap: wrap; } .download-actions .btn { width: auto; } } @media (max-width: 759px) { .cta-row { flex-direction: column; } .cta-row .btn { width: 100%; justify-content: center; } } footer {
         border-top: 1px solid var(--line); padding: 34px 0 44px;
         color: var(--ink-faint); font-size: 0.9rem;
       }
@@ -517,11 +517,11 @@
             hoy mismo: el archivo oficial de la app (APK, 74 MB) con las
             instrucciones para instalarlo en tu Android.
           </p>
-          <a class="btn" href="mailto:gles.03.03@gmail.com?subject=Quiero%20descargar%20Frecliente&body=Hola%2C%20quiero%20probar%20Frecliente%20en%20mi%20negocio.">
+          <div class="download-actions"><a class="btn" href="mailto:gles.03.03@gmail.com?subject=Quiero%20descargar%20Frecliente&body=Hola%2C%20quiero%20probar%20Frecliente%20en%20mi%20negocio.">
             <i data-lucide="mail"></i>
             Pedir la app por correo
           </a>
-          <a class="btn" href="https://www.facebook.com/profile.php?id=61595985346440" target="_blank" rel="noopener"><i data-lucide="facebook"></i> Síguenos en Facebook</a><div class="install-steps">
+          <a class="btn" href="https://www.facebook.com/profile.php?id=61595985346440" target="_blank" rel="noopener"><i data-lucide="facebook"></i> Síguenos en Facebook</a></div><div class="install-steps">
             <div class="s">
               <strong>1. Recibe el archivo</strong>
               Te llega el instalador de Frecliente (archivo .apk) a tu correo.
