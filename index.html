@@ -5,6 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="color-scheme" content="dark" />
     <meta name="description" content="Frecliente: la tarjeta de lealtad digital de tu negocio. Registra clientes, entrega tarjetas con QR y suma visitas escaneando. Sin papel y sin internet." />
+    <link rel="canonical" href="https://frecliente.com/" />
+    <meta property="og:title" content="Frecliente" />
+    <meta property="og:description" content="Frecliente: la tarjeta de lealtad digital de tu negocio. Registra clientes, entrega tarjetas con QR y suma visitas escaneando. Sin papel y sin internet." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://frecliente.com/" />
+    <meta property="og:image" content="https://frecliente.com/assets/logo-mascota.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Frecliente" />
+    <meta name="twitter:description" content="Frecliente: la tarjeta de lealtad digital de tu negocio. Registra clientes, entrega tarjetas con QR y suma visitas escaneando. Sin papel y sin internet." />
+    <meta name="twitter:image" content="https://frecliente.com/assets/logo-mascota.png" />
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Frecliente",
+  "url": "https://frecliente.com/"
+}
+    </script>
     <link rel="icon" type="image/png" href="assets/logo-mascota.png" />
     <title>Frecliente — Tus clientes vuelven. Tú solo escaneas.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -129,6 +147,46 @@
         background: var(--surface-2); color: var(--ink-faint);
         cursor: default; transform: none; font-family: inherit;
       }
+      .btn-gold {
+        background: var(--gold); color: #3a2a02;
+      }
+      .btn-gold:hover { background: #ffd166; color: #3a2a02; }
+      /* ---------- Lista de espera ---------- */
+      .waitlist-wrap { width: 100%; max-width: 560px; }
+      #lista-espera, #lista-espera-descargar { scroll-margin-top: 90px; scroll-margin-bottom: 100px; }
+      .waitlist-form {
+        display: flex; flex-wrap: wrap; gap: 10px; width: 100%;
+      }
+      .waitlist-form input[type="email"] {
+        flex: 1 1 220px; min-width: 0;
+        padding: 14px 18px; border-radius: 999px;
+        border: 1.5px solid var(--line);
+        background: rgba(255,255,255,0.07); color: var(--ink);
+        font: inherit; font-size: 1rem;
+      }
+      .waitlist-form input[type="email"]::placeholder { color: var(--ink-faint); }
+      .waitlist-form input[type="email"]:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+      .waitlist-form .btn { flex: 0 1 auto; justify-content: center; }
+      .waitlist-confirm {
+        margin: 12px 0 0; padding: 12px 16px;
+        background: rgba(242,193,78,0.14); border: 1px solid rgba(242,193,78,0.45);
+        color: var(--ink); border-radius: 12px; font-size: 0.95rem; font-weight: 700;
+      }
+      .waitlist-confirm[hidden] { display: none !important; }
+      .waitlist-direct { margin: 10px 0 0; font-size: 0.9rem; }
+      .waitlist-direct a { color: var(--ink-soft); text-decoration: underline; text-underline-offset: 3px; }
+      .waitlist-direct a:hover { color: var(--ink); }
+      .hero-price {
+        margin: 14px 0 0; color: var(--ink-soft); font-size: 0.98rem; font-weight: 700;
+      }
+      .waitlist-wrap--download { max-width: 560px; margin: 0 auto; width: 100%; }
+      .waitlist-wrap--download .waitlist-form { justify-content: center; }
+      .waitlist-wrap--download .waitlist-confirm, .waitlist-wrap--download .waitlist-direct { text-align: center; }
+      @media (max-width: 560px) {
+        .waitlist-form { flex-direction: column; align-items: stretch; }
+        .waitlist-form .btn { width: 100%; flex: none; }
+        .waitlist-form input[type="email"] { width: 100%; flex: none; height: auto; min-height: 0; padding: 14px 18px; }
+      }
       .download-actions {
         display: flex; flex-direction: column; gap: 14px;
         align-items: stretch; max-width: 430px; margin: 0 auto;
@@ -137,6 +195,11 @@
         width: 100%; min-width: 0;
         justify-content: center; text-align: center;
         white-space: normal;
+      }
+      .download-actions .waitlist-wrap--download { flex: 1 1 100%; width: 100%; }
+      .download-actions .waitlist-form .btn { width: auto; }
+      @media (max-width: 560px) {
+        .download-actions .waitlist-form .btn { width: 100%; }
       }
       @media (min-width: 680px) {
         .download-actions {
@@ -158,6 +221,12 @@
 
       /* ---------- Phone mock ---------- */
       .phone-zone { display: flex; justify-content: center; }
+      .phone-figure { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+      .phone-img { display: block; width: 100%; height: auto; border-radius: 28px; object-fit: cover; }
+      .phone-caption { color: var(--ink-faint); font-size: 0.85rem; font-weight: 600; text-align: center; margin: 0; }
+      .panel-shot { display: flex; justify-content: center; margin: 0 0 36px; }
+      .panel-shot .phone { transform: none; }
+      .step-shot { display: block; width: min(190px, 100%); height: auto; margin: 20px auto 0; border-radius: 20px; border: 1px solid rgba(125, 190, 248, 0.35); box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35); object-fit: cover; }
       .phone {
         width: min(300px, 82vw);
         background: #0a1220;
@@ -526,6 +595,49 @@
         .topnav .links { min-width: min(248px, calc(100vw - 32px)); }
         .topnav .menu-btn { padding: 9px 14px; }
       }
+      /* Encabezado: CTA dorado + navegación visible en escritorio */
+      .header-cta {
+        display: none;
+        flex: 0 0 auto;
+        font-size: 0.92rem; padding: 11px 18px;
+        white-space: nowrap;
+      }
+      @media (min-width: 880px) {
+        .topnav .bar { gap: 10px 14px; }
+        .topnav .menu-wrap {
+          position: static; margin-left: 0; flex: 1 1 auto;
+          display: flex; justify-content: center;
+        }
+        .topnav .menu-btn { display: none !important; }
+        .topnav .links,
+        .topnav .links[hidden] {
+          display: flex !important;
+          position: static; top: auto; right: auto;
+          flex-direction: row; align-items: center; gap: 2px;
+          min-width: 0; width: auto; max-width: none;
+          background: transparent; border: 0; border-radius: 0;
+          padding: 0; box-shadow: none;
+        }
+        .topnav .links a {
+          width: auto; padding: 9px 9px; font-size: 0.9rem; border-radius: 999px;
+        }
+        .header-cta { display: inline-flex; }
+      }
+      @media (min-width: 1020px) {
+        .topnav .links a { padding: 9px 11px; font-size: 0.94rem; }
+      }
+      /* CTA fijo en móvil */
+      .mobile-cta-bar { display: none; }
+      @media (max-width: 879px) {
+        body { padding-bottom: 78px; }
+        .mobile-cta-bar {
+          display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 55;
+          background: var(--bg-deep); border-top: 1px solid var(--line);
+          padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+          box-shadow: 0 -10px 30px rgba(0,0,0,0.45);
+        }
+        .mobile-cta-bar .btn { width: 100%; justify-content: center; text-align: center; font-size: 1rem; padding: 13px 18px; }
+      }
 
       /* ---------- Último consejo (Inicio) ---------- */
       .latest-tip {
@@ -608,7 +720,13 @@
       }
 
 
-      /* ---------- Anuncios AdSense (solo Blog, después de cada nota) ---------- */
+      /* ---------- Enlace a la página propia de cada nota ---------- */
+      .article .note-more { margin-top: 16px; align-self: flex-start;
+        font-weight: 800; font-size: 0.95rem; color: var(--gold);
+        text-decoration: none; }
+      .article .note-more:hover { text-decoration: underline; }
+
+/* ---------- Anuncios AdSense (solo Blog, después de cada nota) ---------- */
       /* La lista del Blog va en UNA sola columna, no en la cuadrícula de
          2 columnas de .blog: con la cuadrícula, cada nota ocupaba media
          fila junto a un hueco vacío y su anuncio (de fila completa) caía
@@ -760,6 +878,7 @@
             <a href="#descargar" class="tab-link" data-goto-tab="descargar" role="tab" aria-selected="false">Descargar</a>
           </div>
         </div>
+        <a class="btn btn-gold header-cta" href="#lista-espera" data-scroll-waitlist>Avísame cuando esté lista</a>
       </div>
     </nav>
 
@@ -773,13 +892,18 @@
           </div>
           <h1>Tu negocio no necesita más clientes. <span class="hl">Necesita que los que ya tienes, vuelvan.</span></h1>
           <p class="lede">Registra a tus clientes en menos de 10 segundos, dales su tarjeta digital con QR y deja que Frecliente analice tus visitas: te dice a quién felicitar, a quién invitar de vuelta y cuándo hacer una promoción. Sin internet y sin complicaciones.</p>
-          <div class="cta-row">
-            <button type="button" class="btn btn-soon" disabled aria-disabled="true">
-              <i data-lucide="clock"></i>
-              Próximamente
-            </button>
+          <div class="waitlist-wrap">
+            <form id="lista-espera" class="waitlist-form" data-waitlist-form>
+              <input type="email" required placeholder="Tu correo electrónico" aria-label="Tu correo electrónico" autocomplete="email" />
+              <button type="submit" class="btn btn-gold">Avísame cuando esté lista</button>
+            </form>
+            <p class="waitlist-confirm" data-waitlist-confirm hidden role="status">¡Listo! Se abrió tu correo para confirmar: revísalo y envíalo.</p>
+            <p class="waitlist-direct"><a href="mailto:contacto@frecliente.com">o escríbenos directo a contacto@frecliente.com</a></p>
+          </div>
+          <div class="cta-row" style="margin-top:18px">
             <a class="btn btn-ghost" href="#como-funciona" data-scroll-to="#como-funciona">Cómo funciona</a>
           </div>
+          <p class="hero-price">Gratis hasta 20 clientes · Pro $199 MXN/año</p>
           <div class="hero-notes">
             <span><i data-lucide="smartphone"></i> Para Android</span>
             <span><i data-lucide="wifi-off"></i> Funciona sin internet</span>
@@ -787,49 +911,13 @@
           </div>
         </div>
 
-        <div class="phone-zone" aria-hidden="true">
-          <div class="phone">
-            <div class="phone-screen">
-              <div class="phone-head">
-                <img src="assets/logo-mascota.png" alt="" />
-                <div>
-                  <div class="biz">Mi negocio</div>
-                  <div class="sub">PANEL · ESTA SEMANA</div>
-                </div>
-              </div>
-              <div class="stat-big">128</div>
-              <div class="stat-label">visitas esta semana</div>
-              <div class="delta"><i data-lucide="trending-up"></i> +18% vs. la semana pasada</div>
-              <div class="bars">
-                <i style="height:38%"></i><i style="height:55%"></i><i style="height:44%"></i>
-                <i style="height:70%"></i><i style="height:62%"></i><i style="height:92%"></i><i style="height:80%"></i>
-              </div>
-              <div class="bars-labels"><span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
-              <div class="goal">
-                <div class="row"><span>Meta semanal · 50 visitas</span><span>¡Cumplida!</span></div>
-                <div class="track"><div class="fill" style="width:100%"></div></div>
-              </div>
-              <div class="mini-card">
-                <div class="t"><i data-lucide="lightbulb"></i> Consejo de hoy</div>
-                <p>Tu mejor cliente no viene desde el martes. Mándale su tarjeta por WhatsApp e invítalo a volver.</p>
-              </div>
-              <div class="mini-card">
-                <div class="t"><i data-lucide="flame"></i> Tus horas fuertes</div>
-                <div class="heat">
-                  <i></i><i class="h1"></i><i class="h2"></i><i class="h1"></i><i></i><i class="h1"></i><i></i>
-                  <i class="h1"></i><i class="h2"></i><i class="h3"></i><i class="h2"></i><i class="h1"></i><i class="h3"></i><i class="h2"></i>
-                  <i></i><i class="h1"></i><i class="h2"></i><i class="h3"></i><i class="h1"></i><i></i><i class="h1"></i>
-                </div>
-              </div>
-              <div class="phone-tabs">
-                <div class="tab"><i data-lucide="user-plus"></i>Registro</div>
-                <div class="tab on"><i data-lucide="bar-chart-3"></i>Panel</div>
-                <div class="tab"><i data-lucide="scan-line"></i>Escáner</div>
-                <div class="tab"><i data-lucide="users"></i>Directorio</div>
-                <div class="tab"><i data-lucide="settings"></i>Ajustes</div>
-              </div>
+        <div class="phone-zone">
+          <figure class="phone-figure">
+            <div class="phone">
+              <img class="phone-img" src="assets/captura-escaner.png" alt="Captura real del Escáner de Frecliente" width="1080" height="1920" loading="lazy" />
             </div>
-          </div>
+            <figcaption class="phone-caption">Captura real del Escáner</figcaption>
+          </figure>
         </div>
       </div>
     </header>
@@ -844,16 +932,19 @@
             <div class="num">1</div>
             <h3>Registra al cliente</h3>
             <p>Escribe su nombre y su celular en la pestaña Registro. En menos de 10 segundos queda registrado con su propio ID, por ejemplo FRE-0001.</p>
+            <img class="step-shot" src="assets/captura-registro.png" alt="Captura real del registro de un cliente" width="1080" height="1920" loading="lazy" />
           </div>
           <div class="step">
             <div class="num">2</div>
             <h3>Entrégale su tarjeta con QR</h3>
             <p>Su tarjeta digital se genera sola y se la compartes por WhatsApp como imagen, con su nombre, su ID y su código QR. Puedes elegir sus colores y textura.</p>
+            <img class="step-shot" src="assets/captura-tarjeta-qr.png" alt="Captura real de la tarjeta digital con QR" width="1080" height="1920" loading="lazy" />
           </div>
           <div class="step">
             <div class="num">3</div>
             <h3>Escanea en cada visita</h3>
             <p>Cuando vuelva, apunta la cámara a su QR desde la pestaña Escáner y la visita se suma al instante. También puedes sumarla a mano desde su perfil.</p>
+            <img class="step-shot" src="assets/captura-escaner.png" alt="Captura real del Escáner" width="1080" height="1920" loading="lazy" />
           </div>
         </div>
       </div>
@@ -864,6 +955,11 @@
       <div class="wrap">
         <h2>El Panel: tu negocio, en números claros</h2>
         <p class="section-lede">Frecliente lee tus visitas y te las explica en español sencillo: qué va bien, quién está dejando de venir y qué puedes hacer hoy.</p>
+        <div class="panel-shot">
+          <div class="phone">
+            <img class="phone-img" src="assets/captura-panel.png" alt="Captura real del Panel de Frecliente" width="1080" height="1920" loading="lazy" />
+          </div>
+        </div>
         <div class="features">
           <div class="feature">
             <div class="ic"><i data-lucide="calendar-days"></i></div>
@@ -1479,7 +1575,37 @@
           <button type="button" class="blog-filter" data-filter="Historias" aria-pressed="false">Historias</button>
           <button type="button" class="blog-filter" data-filter="Negocios" aria-pressed="false">Negocios</button>
         </div>
-        <div class="blog" id="blog-list"><article class="article"><img class="article-img" src="assets/blog-chapo-isidro-2026.jpg" alt="Carretera vacía al atardecer con un retén y comercios cerrados" loading="lazy" /><div class="ic"><i data-lucide="newspaper"></i></div><div class="note-meta"><span class="note-cat actualidad">Actualidad</span><span class="note-date"><i data-lucide="calendar-days"></i><time datetime="2026-11-21">21 de noviembre de 2026</time></span></div><h3>Cae "El Chapo Isidro" en Guasave: una noche de bloqueos que paralizó el comercio de Sinaloa</h3><div class="note-byline">Redacción Frecliente · Actualidad</div><p>Las fuerzas federales detuvieron la noche del viernes 20 de noviembre en Guasave, Sinaloa, a Fausto Isidro Meza Flores, alias "El Chapo Isidro", uno de los diez fugitivos más buscados por el FBI, que ofrecía cinco millones de dólares por información que llevara a su captura. La Secretaría de la Defensa Nacional confirmó el arresto, realizado con inteligencia de Estados Unidos, y el traslado del detenido a la Ciudad de México. Junto con él cayeron su segundo al mando, alias "Serafín", y el operador financiero de la organización.</p><p>La captura desató una noche de enfrentamientos, vehículos incendiados y bloqueos en carreteras de Ahome, Guamúchil, Guasave y Navolato. Las autoridades pidieron a la población quedarse en casa y evitar la carretera Internacional México 15 y la autopista Benito Juárez, conocida como La Costera. Hasta un partido de béisbol entre los Algodoneros de Guasave y los Venados de Mazatlán se suspendió cuando se escucharon disparos cerca del estadio y los aficionados buscaron refugio.</p><p>Para la gente de Guasave, la noche se tradujo en dinero perdido. Los comercios cerraron antes de su horario habitual y varias personas quedaron refugiadas dentro de los negocios, según relataron testigos a CNN. Las carreteras bloqueadas dejaron varados a viajeros y frenaron el movimiento de mercancías en una de las zonas agrícolas más importantes de Sinaloa, donde cada hora de camino cerrado es una entrega que no llega y una venta que no se hace.</p><p>Detrás del operativo también hay una historia de dinero. El Departamento del Tesoro de Estados Unidos había sancionado a tres empresas de Guasave vinculadas a la organización: una transportista de granos, una gasolinera y una constructora, cuyos bienes quedaron bloqueados y con las que se prohibió hacer transacciones. La detención del operador financiero apunta justo a esa red: no solo se persigue al jefe, también se busca cortar el flujo de efectivo que sostiene a la organización.</p><p>Meza Flores, de 44 años, tiene una orden de aprehensión en México y una orden de extradición a Estados Unidos, donde se le acusa de distribuir droga en ese país. Lo que sigue ahora es saber cuánto dura la alteración en Sinaloa: cuando en el pasado se han dado operativos así, la vida comercial de las ciudades afectadas tarda días en volver a la normalidad, y cada día de calles cerradas y carreteras bloqueadas es un día de ventas perdidas para los negocios de la región.</p></article><div class="ad-slot"></div><article class="article"><img class="article-img" src="assets/blog-lego-2026.jpg" alt="Ladrillos LEGO de colores y una casa construida con ellos sobre una mesa de taller" loading="lazy" /><div class="ic"><i data-lucide="blocks"></i></div><div class="note-meta"><span class="note-cat historias">Historias</span><span class="note-date"><i data-lucide="calendar-days"></i><time datetime="2026-11-21">21 de noviembre de 2026</time></span></div><h3>LEGO: el carpintero que perdió todo en la Gran Depresión y construyó el juguete más vendido del mundo</h3><div class="note-byline">Redacción Frecliente · Historias</div><p>En 1932, en plena Gran Depresión, el carpintero danés Ole Kirk Christiansen se quedó casi sin pedidos de muebles en su taller de Billund, un pueblo de Dinamarca. Viudo y con cuatro hijos que mantener, empezó a fabricar juguetes de madera con los restos del taller. Un pato de madera con el pico móvil se volvió su primer éxito. Dos años después, en 1934, le puso nombre a la empresa: LEGO, abreviatura de las palabras danesas "leg godt", que significan "jugar bien".</p><p>El salto grande llegó con el plástico. En 1949 lanzó sus primeros ladrillos, y en 1958 patentó el sistema que lo cambió todo: unos tubos en la base que encajan con los tetones de arriba y hacen que las piezas se agarren con firmeza y se puedan desarmar. Ese mismo año murió el fundador, y en 1960 un incendio destruyó el almacén de juguetes de madera. La familia decidió apostar todo por el ladrillo de plástico.</p><p>Durante décadas el negocio creció sin freno, hasta que a finales de los noventa empezó a perder dinero por primera vez en su historia. La empresa se había metido en demasiadas cosas a la vez: ropa, joyas, videojuegos propios y parques temáticos. En 2004 llegó a un déficit de 287 millones de euros y estaba al borde de la quiebra. La familia tomó una decisión inédita: poner al frente a alguien de fuera, Jørgen Vig Knudstorp, el primer director general que no era de la familia.</p><p>Knudstorp vendió los parques Legoland, recortó el catálogo y devolvió el foco al ladrillo, con licencias como Star Wars y sets pensados también para adultos. La jugada funcionó: en 2015 LEGO superó a Mattel como la juguetera con más ventas del mundo. Y en 2024, según sus propios resultados anuales, facturó 74,300 millones de coronas danesas, un 13% más que el año anterior, con ventas a consumidores que crecieron 12% mientras el mercado mundial del juguete se achicaba 1%.</p><p>Hoy LEGO sigue siendo una empresa privada, controlada por la familia fundadora, y su sede sigue en Billund, el mismo pueblo donde empezó todo. De un taller de carpintería que casi cierra en la Gran Depresión a una de las marcas de juguetes más grandes del planeta: el negocio no lo salvó un juguete nuevo, sino volver a lo que siempre había hecho bien.</p></article><div class="ad-slot"></div>
+        <div class="blog" id="blog-list">
+<article class="article">
+<img class="article-img" src="assets/blog-chapo-isidro-2026.jpg" alt="Carretera vacía al atardecer con un retén y comercios cerrados" loading="lazy" />
+<div class="ic"><i data-lucide="newspaper"></i></div>
+<div class="note-meta"><span class="note-cat actualidad">Actualidad</span> <span class="note-date"><i data-lucide="calendar-days"></i><time datetime="2026-11-21">21 de noviembre de 2026</time></span></div>
+<h3>Cae "El Chapo Isidro" en Guasave: una noche de bloqueos que paralizó el comercio de Sinaloa</h3>
+<div class="note-byline">Redacción Frecliente · Actualidad</div>
+<p>Las fuerzas federales detuvieron la noche del viernes 20 de noviembre en Guasave, Sinaloa, a Fausto Isidro Meza Flores, alias "El Chapo Isidro", uno de los diez fugitivos más buscados por el FBI, que ofrecía cinco millones de dólares por información que llevara a su captura. La Secretaría de la Defensa Nacional confirmó el arresto, realizado con inteligencia de Estados Unidos, y el traslado del detenido a la Ciudad de México. Junto con él cayeron su segundo al mando, alias "Serafín", y el operador financiero de la organización.</p>
+<p>La captura desató una noche de enfrentamientos, vehículos incendiados y bloqueos en carreteras de Ahome, Guamúchil, Guasave y Navolato. Las autoridades pidieron a la población quedarse en casa y evitar la carretera Internacional México 15 y la autopista Benito Juárez, conocida como La Costera. Hasta un partido de béisbol entre los Algodoneros de Guasave y los Venados de Mazatlán se suspendió cuando se escucharon disparos cerca del estadio y los aficionados buscaron refugio.</p>
+<p>Para la gente de Guasave, la noche se tradujo en dinero perdido. Los comercios cerraron antes de su horario habitual y varias personas quedaron refugiadas dentro de los negocios, según relataron testigos a CNN. Las carreteras bloqueadas dejaron varados a viajeros y frenaron el movimiento de mercancías en una de las zonas agrícolas más importantes de Sinaloa, donde cada hora de camino cerrado es una entrega que no llega y una venta que no se hace.</p>
+<p>Detrás del operativo también hay una historia de dinero. El Departamento del Tesoro de Estados Unidos había sancionado a tres empresas de Guasave vinculadas a la organización: una transportista de granos, una gasolinera y una constructora, cuyos bienes quedaron bloqueados y con las que se prohibió hacer transacciones. La detención del operador financiero apunta justo a esa red: no solo se persigue al jefe, también se busca cortar el flujo de efectivo que sostiene a la organización.</p>
+<p>Meza Flores, de 44 años, tiene una orden de aprehensión en México y una orden de extradición a Estados Unidos, donde se le acusa de distribuir droga en ese país. Lo que sigue ahora es saber cuánto dura la alteración en Sinaloa: cuando en el pasado se han dado operativos así, la vida comercial de las ciudades afectadas tarda días en volver a la normalidad, y cada día de calles cerradas y carreteras bloqueadas es un día de ventas perdidas para los negocios de la región.</p>
+
+<a class="note-more" href="blog/cae-el-chapo-isidro-en-guasave-una-noche.html">Leer nota completa →</a>
+</article>
+<div class="ad-slot"></div>
+<article class="article">
+<img class="article-img" src="assets/blog-lego-2026.jpg" alt="Ladrillos LEGO de colores y una casa construida con ellos sobre una mesa de taller" loading="lazy" />
+<div class="ic"><i data-lucide="blocks"></i></div>
+<div class="note-meta"><span class="note-cat historias">Historias</span> <span class="note-date"><i data-lucide="calendar-days"></i><time datetime="2026-11-21">21 de noviembre de 2026</time></span></div>
+<h3>LEGO: el carpintero que perdió todo en la Gran Depresión y construyó el juguete más vendido del mundo</h3>
+<div class="note-byline">Redacción Frecliente · Historias</div>
+<p>En 1932, en plena Gran Depresión, el carpintero danés Ole Kirk Christiansen se quedó casi sin pedidos de muebles en su taller de Billund, un pueblo de Dinamarca. Viudo y con cuatro hijos que mantener, empezó a fabricar juguetes de madera con los restos del taller. Un pato de madera con el pico móvil se volvió su primer éxito. Dos años después, en 1934, le puso nombre a la empresa: LEGO, abreviatura de las palabras danesas "leg godt", que significan "jugar bien".</p>
+<p>El salto grande llegó con el plástico. En 1949 lanzó sus primeros ladrillos, y en 1958 patentó el sistema que lo cambió todo: unos tubos en la base que encajan con los tetones de arriba y hacen que las piezas se agarren con firmeza y se puedan desarmar. Ese mismo año murió el fundador, y en 1960 un incendio destruyó el almacén de juguetes de madera. La familia decidió apostar todo por el ladrillo de plástico.</p>
+<p>Durante décadas el negocio creció sin freno, hasta que a finales de los noventa empezó a perder dinero por primera vez en su historia. La empresa se había metido en demasiadas cosas a la vez: ropa, joyas, videojuegos propios y parques temáticos. En 2004 llegó a un déficit de 287 millones de euros y estaba al borde de la quiebra. La familia tomó una decisión inédita: poner al frente a alguien de fuera, Jørgen Vig Knudstorp, el primer director general que no era de la familia.</p>
+<p>Knudstorp vendió los parques Legoland, recortó el catálogo y devolvió el foco al ladrillo, con licencias como Star Wars y sets pensados también para adultos. La jugada funcionó: en 2015 LEGO superó a Mattel como la juguetera con más ventas del mundo. Y en 2024, según sus propios resultados anuales, facturó 74,300 millones de coronas danesas, un 13% más que el año anterior, con ventas a consumidores que crecieron 12% mientras el mercado mundial del juguete se achicaba 1%.</p>
+<p>Hoy LEGO sigue siendo una empresa privada, controlada por la familia fundadora, y su sede sigue en Billund, el mismo pueblo donde empezó todo. De un taller de carpintería que casi cierra en la Gran Depresión a una de las marcas de juguetes más grandes del planeta: el negocio no lo salvó un juguete nuevo, sino volver a lo que siempre había hecho bien.</p>
+
+<a class="note-more" href="blog/lego-el-carpintero-que-perdio-todo-en-la.html">Leer nota completa →</a>
+</article>
+<div class="ad-slot"></div>
 <article class="article">
 <img class="article-img" src="assets/blog-costos-fijos-variables-2026.jpg" alt="Cocinero de una fonda preparando comida con jitomates, cebolla y carne, con un cuaderno de cuentas y monedas sobre la mesa" loading="lazy" />
 <div class="ic"><i data-lucide="calculator"></i></div>
@@ -1491,6 +1617,8 @@
 <p>Esa es la razón de que los meses malos duelan tanto. Cuando las ventas caen, los ingresos caen con ellas, pero la renta, los sueldos y los servicios siguen llegando con la misma cifra. No es un problema exclusivo de las empresas grandes: según el INEGI, 95.5% de las unidades económicas del país son micro, de 0 a 10 personas, y entre mayo de 2019 y mayo de 2023 nacieron 1.7 millones de mipymes y murieron 1.4 millones. Detrás de muchos de esos cierres hay meses en los que las ventas no alcanzaron a cubrir los gastos fijos.</p>
 <p>Para distinguir un costo del otro basta una pregunta: ¿lo pago aunque no venda nada este mes? Si la respuesta es sí, es fijo; si es no, es variable. Hay gastos que se mezclan, como la luz, que tiene una parte base y otra que sube con el uso, pero la pregunta sigue funcionando para la mayor parte de los gastos de un negocio pequeño. Con esa clasificación, el punto de equilibrio —el nivel de ventas en el que un negocio deja de perder— se entiende mejor: es el momento en que las ventas alcanzan a pagar todos los fijos del mes.</p>
 <p>Al final, todo negocio vive de la misma cuenta: lo que entra por las ventas menos lo que sale por los dos tipos de costo. Cuando esa cuenta no cuadra, el problema rara vez está en un solo día malo, sino en unos costos fijos que pesan más que las ventas del mes.</p>
+
+<a class="note-more" href="blog/costos-fijos-y-costos-variables-la-diferencia-que.html">Leer nota completa →</a>
 </article>
 <div class="ad-slot"></div>
 <article class="article">
@@ -1514,6 +1642,8 @@
 <p>El debate de fondo es si la inteligencia artificial está en una burbuja. Los analistas están divididos. PitchBook, una firma que sigue el mercado de capital privado, advirtió que la valoración de Anthropic "no es barata" y que gran parte del crecimiento ya está descontado en el precio. Barron's calculó que la empresa vale alrededor de 11 veces sus ventas estimadas para 2027, mientras que Reuters llegó a 40 veces las ventas de los últimos 12 meses; la diferencia está en qué ventas se toman como base, pero en ambos casos el precio supone que el crecimiento seguirá siendo extraordinario. Otros analistas, como los de Cetera y Treasury Partners, hablan de una revalorización general de la inteligencia artificial, en un momento en que las tasas de interés en Estados Unidos rondan el 5%. Y hay un dato que pesa en ese debate: según Morningstar, el precio de usar inteligencia artificial ha caído alrededor de 97% en poco tiempo, de 17 dólares a 50 centavos por una unidad de uso, lo que hace más difícil ganar dinero con cada consulta.</p>
 <p>Hay además una dependencia que los propios documentos de Anthropic dejan ver. Amazon, Google y Microsoft son a la vez sus inversores, sus proveedores de nube, sus distribuidores y sus competidores: alrededor de 44% de los ingresos de Anthropic llega a través de los mercados de aplicaciones de esas empresas, y sus cinco clientes más grandes representan alrededor de 25% de sus ventas. En el gobierno de la empresa, los fundadores se quedaron con 50.1% de los votos a través de una clase especial de acciones, y un fideicomiso creado por ellos tiene mayoría en el consejo. Y en lo regulatorio, el gobierno de Donald Trump designó en febrero de 2026 a la empresa como riesgo para la cadena de suministro, después de que Anthropic se negó a retirar sus límites al uso militar de sus modelos.</p>
 <p>Lo que sigue es lo que el mercado mirará ahora. Primero, si la acción se mantiene por encima de los 83 dólares del debut o si cae por debajo, lo que marcaría el ánimo de los inversionistas. Segundo, los próximos resultados trimestrales de Anthropic, los primeros como empresa pública, que mostrarán si el crecimiento de los ingresos sigue al ritmo de este año. Y tercero, lo que decida OpenAI: si sale a bolsa en 2027, como se ha aplazado, la comparación entre las dos empresas se volverá la referencia central para saber cuánto vale realmente la inteligencia artificial.</p>
+
+<a class="note-more" href="blog/anthropic-la-empresa-detras-de-claude-debuta-en.html">Leer nota completa →</a>
 </article>
 <div class="ad-slot"></div>
 <article class="article">
@@ -1527,6 +1657,8 @@
 <p>Ni siquiera el estreno bursátil más esperado del año logró calmar el ambiente. Anthropic, la empresa de inteligencia artificial que debutó en bolsa el jueves con una subida de 17%, caía alrededor de 10% en su segundo día. El nerviosismo se extendió más allá de las acciones: el bitcoin bajó de los 60,000 dólares, hasta 58,550, y el oro, que suele subir cuando hay miedo, cayó 1.3%, hasta 3,576 dólares la onza, en camino a su peor semana en ocho meses.</p>
 <p>México también siente el golpe. La Bolsa Mexicana se encaminaba a su sexta caída consecutiva, con el índice IPC en 68,421 puntos por la mañana, y el peso acumula una pérdida de 3.40% frente al dólar en la semana. Cuando los inversionistas de Estados Unidos venden con miedo, el dinero también sale de los mercados de otros países, y eso se nota en la bolsa y en el tipo de cambio.</p>
 <p>Lo que sigue es lo que el mercado mira ahora: si las empresas de inteligencia artificial logran mostrar ganancias que justifiquen lo que valen en bolsa, y qué decide la Reserva Federal de Estados Unidos sobre sus tasas en diciembre. Por ahora, la semana deja una señal clara: después de meses de subidas, los mercados volvieron a preguntarse si la inteligencia artificial vale tanto como se pagó por ella.</p>
+
+<a class="note-more" href="blog/wall-street-vive-su-peor-semana-desde-abril.html">Leer nota completa →</a>
 </article>
 <div class="ad-slot"></div>
 <article class="article">
@@ -1545,6 +1677,8 @@
 <p>La plantilla cabe en cuatro columnas y se llena en diez minutos. Fecha, entradas, salidas y saldo. Cada renglón es un día, y al final de cada fila va el saldo de ese día, no solo el de la semana. Abajo se suman las entradas y las salidas, y se anota el saldo final. Con dos semanas de llenarla, ya se ven los patrones: qué día entra más, qué día sale más y cuánto hay que tener guardado para el día de la nómina. Una regla práctica es mantener siempre un colchón de al menos una semana de gastos fijos: en el ejemplo, unos 5,000 pesos que no se tocan salvo emergencia, porque son los que cubren el viernes difícil.</p>
 <p>Hay tres errores que arruinan el flujo aunque la plantilla esté bien hecha. El primero es contar como entrada una venta que todavía no se cobró. El segundo es olvidar los gastos que no tienen factura ni fecha fija, como las propinas que se pagan en efectivo o el dinero que se saca de la caja para un imprevisto. El tercero es mezclar el dinero de la casa con el del negocio: si de la misma caja salen la despensa y el proveedor, ningún número va a cuadrar. Cada uno se corrige con una regla simple: solo se anota lo que entró o salió de verdad, todo gasto se anota el mismo día, y la caja del negocio no paga gastos de la casa.</p>
 <p>Al final, el flujo de caja semanal no sirve para saber si el negocio es rentable, sirve para saber si llega al viernes. Es la cuenta que separa a los negocios que venden bien y cierran por falta de efectivo de los que venden lo mismo y siguen abiertos: no es cuánto entra en el mes, es en qué día entra y en qué día sale.</p>
+
+<a class="note-more" href="blog/flujo-de-caja-semanal-como-saber-si-tu.html">Leer nota completa →</a>
 </article>
 <div class="ad-slot"></div>
 <article class="article">
@@ -1558,6 +1692,8 @@
 <p>El ejemplo no es teórico: es lo que pagan hoy los instrumentos más comunes en México. El 5 de noviembre, Banxico recortó su tasa de referencia a 6.25%, vigente desde el 6 de noviembre, y en la subasta del 17 de noviembre los CETES a 28 días quedaron en 6.19% anual. Quien reinvierte cada vencimiento está aplicando interés compuesto en la práctica. Conviene leer bien la cifra: ese 6.19% es anual, no mensual; 10,000 pesos en CETES a 28 días generan unos 48 pesos de interés bruto en ese mes, antes de impuestos.</p>
 <p>El mismo mecanismo funciona en sentido contrario, y ahí es donde más se nota. Cuando una deuda no se paga completa, los intereses que se acumulan se suman al saldo y empiezan a generar nuevos intereses sobre sí mismos. Por eso un saldo de tarjeta que se deja crecer sin pagar avanza más rápido de lo que parece: no es solo el interés del préstamo original, es interés sobre interés, mes tras mes.</p>
 <p>Por eso los economistas dicen que en el interés compuesto la variable decisiva no es la cantidad inicial, sino el tiempo. Los primeros años la curva casi no se mueve y luego se empina: la mayor parte del crecimiento llega al final. Es un concepto con más de dos siglos de historia en la literatura económica, pero su lógica es la misma desde entonces: dejar que el dinero trabaje, y dejar que lo que gana también trabaje.</p>
+
+<a class="note-more" href="blog/el-interes-compuesto-el-dinero-que-gana-dinero.html">Leer nota completa →</a>
 </article>
 <div class="ad-slot"></div>
 <article class="article">
@@ -1571,6 +1707,8 @@
 <p>Detrás del movimiento están las tasas de interés de los dos países, que van en direcciones opuestas. El Banco de México publicó este jueves las minutas de su última reunión, en la que a principios de noviembre recortó su tasa de referencia a 6.25%. Al mismo tiempo, las minutas de la Reserva Federal de Estados Unidos, publicadas el miércoles, mostraron que casi todos sus integrantes ven probable un nuevo aumento de tasas para frenar la inflación. Cuando en Estados Unidos se paga más por el dinero y en México se paga menos, el dólar se vuelve más atractivo para los inversionistas y el peso pierde fuerza.</p>
 <p>La mayoría de los integrantes de la Junta de Gobierno de Banxico consideró, según las minutas publicadas hoy, que la depreciación reciente no tendrá un impacto significativo sobre la inflación, dada la fase del ciclo económico. Aun así, un peso más débil se siente en el bolsillo: lo que se compra en dólares —desde gasolina y aparatos electrónicos hasta insumos importados— se encarece, y viajar al extranjero cuesta más. Del otro lado, quienes reciben remesas de Estados Unidos obtienen más pesos por cada dólar que les mandan sus familiares.</p>
 <p>El tipo de cambio puede moverse durante el día, por lo que los valores reportados no son un cierre definitivo. Lo que está claro es que el mercado está pendiente de dos fechas: la próxima decisión de la Reserva Federal en diciembre y los siguientes pasos de Banxico. Si la Fed sube las tasas y Banxico las sigue bajando, la presión sobre el peso podría continuar.</p>
+
+<a class="note-more" href="blog/el-dolar-cruza-los-19-pesos-el-nivel.html">Leer nota completa →</a>
 </article>
 <div class="ad-slot"></div>
 <article class="article">
@@ -1584,6 +1722,8 @@
 <p>Ross es la cadena de ropa y artículos para el hogar con descuento más grande de Estados Unidos: opera 1,993 tiendas Ross Dress for Less y 384 tiendas dd's DISCOUNTS, 2,377 locales en total. Su modelo es vender marcas conocidas entre 20% y 60% más baratas que las tiendas departamentales. En el trimestre abrió 51 tiendas nuevas y con eso completó su plan de 115 aperturas en 2026. También recompró acciones por 319 millones de dólares y declaró un dividendo trimestral de 0.445 dólares por acción.</p>
 <p>El resultado llega justo antes de la temporada de compras de fin de año y dice algo sobre el consumidor: con los precios todavía altos, cada vez más hogares buscan la misma ropa y los mismos artículos para el hogar, pero pagando menos. Una parte de la ganancia acumulada del año, eso sí, no viene de las ventas: la empresa reconoció unos 253 millones de dólares por reembolsos de aranceles, que aportaron unos 0.60 dólares por acción.</p>
 <p>Para el último trimestre del año, el que incluye las compras navideñas, Ross espera que sus ventas comparables crezcan entre 4% y 5% y que la ganancia por acción sea de 2.16 a 2.25 dólares. Para todo el año fiscal elevó su pronóstico a una ganancia por acción de entre 8.75 y 8.84 dólares. La cadena cree que seguirá ganando clientes frente a las tiendas de precio completo, porque su apuesta es la misma de siempre: marca conocida, precio bajo y tienda cerca de casa.</p>
+
+<a class="note-more" href="blog/ross-stores-vende-12-mas-en-el-trimestre.html">Leer nota completa →</a>
 </article>
 <div class="ad-slot"></div>
 <article class="article">
@@ -1597,6 +1737,8 @@
 <p>En Japón la película llegó primero: se estrenó el 3 de noviembre, el Día de Godzilla, y vendió 910 millones de yenes, unos 5.75 millones de dólares, solo en su primer día, un récord para una película de acción real en ese país. En su segundo fin de semana en Estados Unidos la recaudación cayó alrededor de 73 por ciento, con unos 8.5 millones, pero para entonces el acumulado mundial ya pasaba de los 100 millones.</p>
 <p>Gran parte del fenómeno se explica por las pantallas premium: IMAX aportó 21.3 millones de dólares en todo el mundo durante el estreno, un tercio del total, y 12.7 millones en Norteamérica, el 40 por ciento de la taquilla de ese fin de semana. Toho distribuyó la película en Estados Unidos a través de su propia distribuidora, GKIDS, que compró en 2024.</p>
 <p>La economía del proyecto es lo más llamativo: el presupuesto se estima en unos 18 millones de dólares y el gasto de marketing en Estados Unidos fue menor a 10 millones, según Deadline. Con más de 100 millones recaudados, la película ya es un éxito rentable, y su antecesora ganó el Óscar a los mejores efectos visuales. La franquicia, que nació en 1954, sigue vendiendo boletos 72 años después.</p>
+
+<a class="note-more" href="blog/godzilla-minus-zero-el-monstruo-japones-que-rompio.html">Leer nota completa →</a>
 </article>
 <div class="ad-slot"></div>
 <article class="article">
@@ -1610,6 +1752,8 @@
 <p>El giro que cambió todo llegó en 1956, casi por accidente. El diseñador Gillis Lundgren quiso llevarse una mesa de tres patas, la LÖVET, y no cabía en el maletero de su coche. Le quitó las patas, y ahí nació la idea del paquete plano: el mueble viaja desarmado en una caja y el cliente lo arma en su casa. El transporte, el almacenamiento y los daños bajaron tanto que el precio final pudo bajar sin sacrificar el diseño.</p>
 <p>En 1958 abrió su primera tienda en Älmhult, en 1963 salió por primera vez de Suecia con una tienda en Noruega, y de ahí la expansión ya no se detuvo. A México llegó en 2021, con su primera tienda en la Ciudad de México; hoy también tiene tiendas en Guadalajara y en otras ciudades del país. Kamprad murió en 2018, a los 91 años, y la empresa quedó en manos de fundaciones de su familia.</p>
 <p>Hoy IKEA tiene más de 470 tiendas en más de 50 países, emplea a unas 219,000 personas y vendió más de 45,000 millones de euros en 2024. Todo empezó con un adolescente que vendía plumas por correo y una mesa a la que le sobraban las patas: abaratar el mueble no quitándole calidad, sino quitándole aire al transporte.</p>
+
+<a class="note-more" href="blog/ikea-el-joven-de-17-anos-que-vendia.html">Leer nota completa →</a>
 </article>
 <div class="ad-slot"></div>
 <article class="article">
@@ -1623,6 +1767,8 @@
 <p>La gracia del presupuesto está en que convierte una sensación en un número. Mucha gente siente que "el dinero no alcanza" sin saber en qué se fue. Con el registro, aparecen las fugas: los gastos pequeños de todos los días, que la CONDUSEF llama "gastos hormiga", y que sumados al mes pueden equivaler a una quincena de despensa. También aparece la capacidad real de ahorro: si después de cubrir lo necesario queda algo, ese algo tiene nombre y destino, por ejemplo, un fondo para imprevistos.</p>
 <p>Para repartir el ingreso, la CONDUSEF recomienda una guía sencilla, la regla 50/30/20: la mitad del ingreso neto para las necesidades básicas —vivienda, comida, transporte, salud y educación—, el 30% para los deseos —salidas, entretenimiento y compras no esenciales— y el 20% para el ahorro y el pago de deudas. Por ejemplo, en un hogar que gana 10,000 pesos al mes, eso serían 5,000 para lo necesario, 3,000 para los gustos y 2,000 para ahorrar o abonar a una deuda. La propia CONDUSEF aclara que es una guía flexible: si las necesidades rebasan el 50%, se ajustan primero los deseos, no se pide prestado para cubrir la diferencia.</p>
 <p>El presupuesto no hace que el dinero rinda más por arte de magia, pero sí cambia lo que se puede decidir con él. Quien lo lleva sabe cuánto puede gastar sin endeudarse, cuánto le falta para una meta y cuándo un gasto nuevo cabe o no cabe en el mes. En un país donde siete de cada diez personas reportan niveles de estrés financiero de moderados a altos, según la Encuesta Nacional sobre Salud Financiera, esa claridad es, para millones de hogares, la diferencia entre ir al día y tener un plan.</p>
+
+<a class="note-more" href="blog/el-presupuesto-la-cuenta-mas-sencilla-y-la.html">Leer nota completa →</a>
 </article>
 <div class="ad-slot"></div>
 <article class="article">
@@ -1636,6 +1782,8 @@
 <p>Fue el primer balance sin Jensen Huang, cofundador y consejero delegado, tras su salida abrupta por un escándalo. La directora financiera, Colette Kress, quedó como consejera delegada interina, y la compañía contrató a la firma Heidrick &amp; Struggles para buscar un sucesor permanente; el regreso de Huang quedó descartado.</p>
 <p>Para el cuarto trimestre, Nvidia prevé ingresos de 130,000 millones de dólares, por encima de los cerca de 125,250 millones del consenso de analistas. El margen bruto fue de 74.8% en el trimestre, aunque la empresa anticipa que bajará a entre 71% y 72%. En los nueve primeros meses del ejercicio, el beneficio acumulado suma 183,297 millones de dólares, un 137% más.</p>
 <p>La empresa reiteró además su programa de recompra de acciones por 150,000 millones de dólares y aclaró que sus previsiones no incluyen ventas de chips para centros de datos en China. El próximo dividendo trimestral, de 0.25 dólares por acción, se pagará el 23 de diciembre.</p>
+
+<a class="note-more" href="blog/nvidia-duplico-sus-ingresos-sin-su-fundador-al.html">Leer nota completa →</a>
 </article>
 <div class="ad-slot"></div>
 <article class="article">
@@ -1649,11 +1797,17 @@
 <p>Hoy los números son de otra liga. En 2024 Mercado Libre facturó 20,777 millones de dólares, un 38% más que el año anterior, y ganó 1,911 millones. Por su plataforma se vendieron mercancías por 51,500 millones de dólares y Mercado Pago movió pagos por 197,000 millones. Opera en 18 países, tiene unos 84 millones de usuarios y emplea a unas 65,000 personas.</p>
 <p>México es uno de sus mercados clave. En marzo de 2025 la empresa anunció una inversión récord de 3,400 millones de dólares en el país, con más de 10,000 empleos nuevos, y este año inauguró en Cuautitlán Izcalli, Estado de México, su centro de cross docking más grande de América Latina: 80,000 metros cuadrados y capacidad para procesar hasta 600,000 paquetes al día. Más de 20,000 tienditas —papelerías, ferreterías— trabajan con Mercado Pago como puntos de cobro y entrega.</p>
 <p>El ciclo se cierra con un cambio de mando: a partir del 1 de enero de 2026 Galperin deja de ser director general después de 26 años y pasa a presidir el consejo; lo sucede Ariel Szarfsztejn. Lo que empezó con mil productos en un garaje con goteras es hoy la empresa tecnológica más valiosa de América Latina.</p>
+
+<a class="note-more" href="blog/del-garaje-de-buenos-aires-al-bolsillo-de.html">Leer nota completa →</a>
 </article>
 <div class="ad-slot"></div>
-<article class="article"><img class="article-img" src="assets/blog-oferta-demanda-2026.jpg" alt="Puesto de mercado con limones y aguacates Hass con letreros de precio" loading="lazy" /><div class="ic"><i data-lucide="scale"></i></div><div class="note-meta"><span class="note-cat economia">Economía</span><span class="note-date"><i data-lucide="calendar-days"></i> <time datetime="2026-11-17">17 de noviembre de 2026</time></span></div><h3>Oferta y demanda: la balanza que mueve el precio de todo lo que compras</h3><div class="note-byline">Redacción Frecliente · Economía</div><p>En la Central de Abasto de Tuxtla Gutiérrez, la arpilla de 20 kilos de limón pasó de 125 a 200 pesos en un año, un aumento de 60%, y a fines de octubre llegó a costar 285 pesos, según datos del Sistema Nacional de Información e Integración de Mercados. En el mismo mercado, el aguacate Hass hizo el camino contrario: bajó de 70 a 42 pesos el kilo. Dos frutas, dos direcciones opuestas, y una sola explicación: la oferta y la demanda.</p><p>La oferta es la cantidad de bienes o servicios que los vendedores ponen a la venta, y la demanda es la cantidad que los compradores quieren adquirir, explica el Banco de México en su portal de educación financiera. Cuando hay muchas naranjas para vender y pocas personas que las quieren comprar, el precio tiende a bajar, porque los productores prefieren vender barato antes que quedarse con la fruta. Al contrario, si una sequía reduce la cosecha, la oferta baja y el precio sube, porque sigue habiendo mucha gente dispuesta a comprar.</p><p>Esa es la ley de la demanda y la ley de la oferta: entre más alto es el precio, menos quiere comprar la gente; entre más alto es el precio, más quieren vender los productores. El precio se ajusta hasta que lo que está a la venta es igual a lo que la gente va a comprar: ese punto es el precio de equilibrio. Con el limón pasó lo primero: menos producción por los frentes fríos, los costos y los problemas de distribución, con la misma cantidad de gente queriéndolo comprar. Con el aguacate pasó lo segundo: hubo más producto disponible y el precio bajó.</p><p>No es solo el campo. Según datos del INEGI, la cebolla subió 89.8% en un año y el jitomate 26.7%, y la canasta alimentaria de las ciudades aumentó 5.5% anual, por encima de la inflación general del país. Cuando la oferta de alimentos se achica, el gasto de las familias sube aunque sus sueldos no se muevan.</p><p>Por eso los precios no se mueven por capricho ni por azar: son el resultado de la negociación constante entre compradores y vendedores. Cambia la cosecha, cambia el clima o cambia lo que la gente quiere comprar, y la balanza se mueve con ello. Entender la oferta y la demanda es entender por qué hoy algo cuesta el doble y mañana puede costar la mitad.</p></article>
+<article class="article"><img class="article-img" src="assets/blog-oferta-demanda-2026.jpg" alt="Puesto de mercado con limones y aguacates Hass con letreros de precio" loading="lazy" /><div class="ic"><i data-lucide="scale"></i></div><div class="note-meta"><span class="note-cat economia">Economía</span><span class="note-date"><i data-lucide="calendar-days"></i> <time datetime="2026-11-17">17 de noviembre de 2026</time></span></div><h3>Oferta y demanda: la balanza que mueve el precio de todo lo que compras</h3><div class="note-byline">Redacción Frecliente · Economía</div><p>En la Central de Abasto de Tuxtla Gutiérrez, la arpilla de 20 kilos de limón pasó de 125 a 200 pesos en un año, un aumento de 60%, y a fines de octubre llegó a costar 285 pesos, según datos del Sistema Nacional de Información e Integración de Mercados. En el mismo mercado, el aguacate Hass hizo el camino contrario: bajó de 70 a 42 pesos el kilo. Dos frutas, dos direcciones opuestas, y una sola explicación: la oferta y la demanda.</p><p>La oferta es la cantidad de bienes o servicios que los vendedores ponen a la venta, y la demanda es la cantidad que los compradores quieren adquirir, explica el Banco de México en su portal de educación financiera. Cuando hay muchas naranjas para vender y pocas personas que las quieren comprar, el precio tiende a bajar, porque los productores prefieren vender barato antes que quedarse con la fruta. Al contrario, si una sequía reduce la cosecha, la oferta baja y el precio sube, porque sigue habiendo mucha gente dispuesta a comprar.</p><p>Esa es la ley de la demanda y la ley de la oferta: entre más alto es el precio, menos quiere comprar la gente; entre más alto es el precio, más quieren vender los productores. El precio se ajusta hasta que lo que está a la venta es igual a lo que la gente va a comprar: ese punto es el precio de equilibrio. Con el limón pasó lo primero: menos producción por los frentes fríos, los costos y los problemas de distribución, con la misma cantidad de gente queriéndolo comprar. Con el aguacate pasó lo segundo: hubo más producto disponible y el precio bajó.</p><p>No es solo el campo. Según datos del INEGI, la cebolla subió 89.8% en un año y el jitomate 26.7%, y la canasta alimentaria de las ciudades aumentó 5.5% anual, por encima de la inflación general del país. Cuando la oferta de alimentos se achica, el gasto de las familias sube aunque sus sueldos no se muevan.</p><p>Por eso los precios no se mueven por capricho ni por azar: son el resultado de la negociación constante entre compradores y vendedores. Cambia la cosecha, cambia el clima o cambia lo que la gente quiere comprar, y la balanza se mueve con ello. Entender la oferta y la demanda es entender por qué hoy algo cuesta el doble y mañana puede costar la mitad.</p>
+<a class="note-more" href="blog/oferta-y-demanda-la-balanza-que-mueve-el.html">Leer nota completa →</a>
+</article>
 <div class="ad-slot"></div>
-<article class="article"><img class="article-img" src="assets/blog-apec-plan-mexico-2026.jpg" alt="Puerto de contenedores al amanecer" loading="lazy" /><div class="ic"><i data-lucide="globe"></i></div><div class="note-meta"><span class="note-cat actualidad">Actualidad</span><span class="note-date"><i data-lucide="calendar-days"></i> <time datetime="2026-11-17">17 de noviembre de 2026</time></span></div><h3>México pone 432 mil millones de dólares sobre la mesa en la APEC y busca vender más aguacate y tequila a China</h3><div class="note-byline">Redacción Frecliente · Actualidad</div><p>La presidenta Claudia Sheinbaum presentó este martes el Plan México ante más de mil empresarios reunidos en la Cumbre de Líderes Empresariales de la APEC, en Shenzhen, China. En su primera gira oficial por Asia desde que asumió la presidencia, expuso una cartera de inversión en infraestructura de 432 mil millones de dólares entre 2024 y 2030, con recursos públicos, privados y mixtos, como la carta de presentación de México ante el capital de las 21 economías del foro.</p><p>El desglose que dio a conocer el gobierno muestra a dónde iría ese dinero: 42 mil millones de dólares para ampliar la generación de electricidad, 43 mil millones para trenes de pasajeros, 62 mil millones en carreteras y puertos, 17 mil millones en transmisión y distribución eléctrica y 8 mil millones para gasoductos. La apuesta es que esa obra pública y privada genere empleo y atraiga fábricas a los Polos de Desarrollo Económico para el Bienestar, las zonas con incentivos fiscales para instalar industria.</p><p>Sheinbaum acompañó la oferta de inversión con cifras del mercado interno: el salario mínimo creció 154 por ciento en términos reales en los últimos ocho años y más de 17 millones de personas salieron de la pobreza entre 2018 y 2026, según datos del Banco Mundial citados en su discurso. El mensaje a los inversionistas fue que México combina mano de obra con mayor poder de compra y una economía integrada a los principales mercados del mundo: es la décimo tercera economía del planeta y la quinta en inversión extranjera directa.</p><p>En paralelo, la presidenta se reunió con el presidente chino, Xi Jinping, para hablar de aumentar las exportaciones mexicanas a China, empezando por el aguacate y el tequila. Hoy esa relación es muy desigual: en 2025, el 83.04 por ciento de lo que México vendió al mundo fue a Estados Unidos y apenas el 1.49 por ciento a China. Por ahora no se anunciaron cantidades, fechas ni acuerdos concretos; el seguimiento quedó en manos del secretario de Economía, Marcelo Ebrard, y de funcionarios chinos.</p><p>El equilibrio es delicado. México no tiene tratado de libre comercio con China y la presidenta dejó claro que no va hacia uno, para no poner en riesgo el T-MEC con Estados Unidos y Canadá. La jugada es vender más a China y atraer su capital sin romper con su principal socio comercial. Como colofón del viaje, México formalizó el camino para organizar la cumbre de líderes de la APEC en 2028.</p></article>
+<article class="article"><img class="article-img" src="assets/blog-apec-plan-mexico-2026.jpg" alt="Puerto de contenedores al amanecer" loading="lazy" /><div class="ic"><i data-lucide="globe"></i></div><div class="note-meta"><span class="note-cat actualidad">Actualidad</span><span class="note-date"><i data-lucide="calendar-days"></i> <time datetime="2026-11-17">17 de noviembre de 2026</time></span></div><h3>México pone 432 mil millones de dólares sobre la mesa en la APEC y busca vender más aguacate y tequila a China</h3><div class="note-byline">Redacción Frecliente · Actualidad</div><p>La presidenta Claudia Sheinbaum presentó este martes el Plan México ante más de mil empresarios reunidos en la Cumbre de Líderes Empresariales de la APEC, en Shenzhen, China. En su primera gira oficial por Asia desde que asumió la presidencia, expuso una cartera de inversión en infraestructura de 432 mil millones de dólares entre 2024 y 2030, con recursos públicos, privados y mixtos, como la carta de presentación de México ante el capital de las 21 economías del foro.</p><p>El desglose que dio a conocer el gobierno muestra a dónde iría ese dinero: 42 mil millones de dólares para ampliar la generación de electricidad, 43 mil millones para trenes de pasajeros, 62 mil millones en carreteras y puertos, 17 mil millones en transmisión y distribución eléctrica y 8 mil millones para gasoductos. La apuesta es que esa obra pública y privada genere empleo y atraiga fábricas a los Polos de Desarrollo Económico para el Bienestar, las zonas con incentivos fiscales para instalar industria.</p><p>Sheinbaum acompañó la oferta de inversión con cifras del mercado interno: el salario mínimo creció 154 por ciento en términos reales en los últimos ocho años y más de 17 millones de personas salieron de la pobreza entre 2018 y 2026, según datos del Banco Mundial citados en su discurso. El mensaje a los inversionistas fue que México combina mano de obra con mayor poder de compra y una economía integrada a los principales mercados del mundo: es la décimo tercera economía del planeta y la quinta en inversión extranjera directa.</p><p>En paralelo, la presidenta se reunió con el presidente chino, Xi Jinping, para hablar de aumentar las exportaciones mexicanas a China, empezando por el aguacate y el tequila. Hoy esa relación es muy desigual: en 2025, el 83.04 por ciento de lo que México vendió al mundo fue a Estados Unidos y apenas el 1.49 por ciento a China. Por ahora no se anunciaron cantidades, fechas ni acuerdos concretos; el seguimiento quedó en manos del secretario de Economía, Marcelo Ebrard, y de funcionarios chinos.</p><p>El equilibrio es delicado. México no tiene tratado de libre comercio con China y la presidenta dejó claro que no va hacia uno, para no poner en riesgo el T-MEC con Estados Unidos y Canadá. La jugada es vender más a China y atraer su capital sin romper con su principal socio comercial. Como colofón del viaje, México formalizó el camino para organizar la cumbre de líderes de la APEC en 2028.</p>
+<a class="note-more" href="blog/mexico-pone-432-mil-millones-de-dolares-sobre.html">Leer nota completa →</a>
+</article>
 <div class="ad-slot"></div>
 <article class="article">
 <img class="article-img" src="assets/blog-oxxo-2026.jpg" alt="Tienda de conveniencia de esquina al anochecer, con toldo a rayas rojas y amarillas y un cliente entrando" loading="lazy" />
@@ -1666,6 +1820,8 @@
 <p>La expansión fue constante. En 1981 la cadena ya tenía 111 tiendas y atendía alrededor de 22 mil clientes al mes; en 1992 abría una tienda cada dos días y medio y ya sumaba 504 en cinco regiones del país. A finales de los años noventa llegó a las mil tiendas, y en 2011 inauguró la número 9,000 en Oaxaca.</p>
 <p>Hoy Oxxo tiene más de 24,000 tiendas en México —24,297 al cierre de 2025 y 24,708 a junio de 2026— y abre en promedio tres sucursales al día. Atiende a unos 13 millones de clientes diarios y ya no vende solo productos: en sus cajas se pagan servicios, se hacen recargas y retiros y opera como corresponsal de varios bancos. Además tiene presencia en Brasil, Colombia, Chile y Perú.</p>
 <p>Lo que empezó como un mostrador para mover cerveza se convirtió en la red de tiendas de proximidad más grande de México y una de las mayores de América Latina. La primera tienda, la de Linda Vista, sigue abierta casi 50 años después.</p>
+
+<a class="note-more" href="blog/oxxo-la-tienda-que-nacio-para-vender-cerveza.html">Leer nota completa →</a>
 </article>
 <div class="ad-slot"></div>
 <article class="article">
@@ -1679,6 +1835,8 @@
 <p>Ese número es la referencia que marca el costo del dinero en todo el país. Cuando baja, los créditos —tarjetas, préstamos personales, hipotecas— tienden a abaratarse con el tiempo, pero el cambio no es inmediato ni automático: cada banco ajusta sus productos a su ritmo. Al mismo tiempo, los rendimientos del ahorro, como los de los CETES, también tienden a bajar.</p>
 <p>Banxico mueve la tasa sobre todo para controlar la inflación. Cuando los precios suben demasiado rápido, subir la tasa encarece el crédito, la gente gasta menos y la inflación se enfría. Cuando la baja, el dinero se abarata y el gasto se anima. La inflación general estaba en 3.62% en la primera quincena de octubre, todavía por encima de la meta permanente de 3% del banco central.</p>
 <p>El propio Banxico anticipó que podría mantener la tasa en 6.25% por un periodo prolongado, y su próxima decisión está programada para el 17 de diciembre. La baja de noviembre no fue el inicio de una cadena de recortes: fue un ajuste puntual, tomado mientras la inflación sigue bajando despacio hacia su meta.</p>
+
+<a class="note-more" href="blog/que-es-la-tasa-de-interes-y-por.html">Leer nota completa →</a>
 </article>
 <div class="ad-slot"></div>
 <article class="article">
@@ -1692,6 +1850,8 @@
 <p>El monto retirado ya rebasó incluso lo que las propias Afores ganaron por administrar los ahorros de los trabajadores: sus ingresos por comisiones sumaron 39,354 millones de pesos al cierre de octubre. La misma Consar ha reconocido que el 70% de estos retiros se tramita a través de gestores, que registran al trabajador con el sueldo más alto disponible y logran un promedio de 35,000 pesos, de los cuales se quedan con alrededor del 30%, unos 11,000 pesos.</p>
 <p>Sacar dinero de la Afore tiene un costo que no se ve en el momento: cada retiro descuenta semanas cotizadas, y eso puede retrasar la pensión o reducir su monto. La Consar matiza el dato: los retiros representan menos del 1% de los 9.3 billones de pesos que manejan las Afores, y las aportaciones para el retiro sumaron más de 633,000 millones de pesos en el mismo periodo.</p>
 <p>El récord se suma a otras señales de un mercado laboral y un consumo que se enfrían: la producción manufacturera creció apenas 0.1% entre enero y septiembre, y las ventas de las grandes cadenas comerciales avanzaron 1.6% en octubre, el menor avance para ese mes en 13 años. El ahorro para el retiro se está usando, cada vez más, como fondo de emergencia.</p>
+
+<a class="note-more" href="blog/los-retiros-de-afore-por-desempleo-rompen-record.html">Leer nota completa →</a>
 </article>
 <div class="ad-slot"></div>
 <article class="article">
@@ -1705,6 +1865,8 @@
 <p>La presión vino por el lado de los gastos. Los gastos generales subieron 5.7%, más rápido que las ventas, y la utilidad operativa retrocedió 1.8%, a 18,683 millones de pesos. La empresa también pagó una tasa de impuestos más alta por ajustes extraordinarios de cálculos fiscales del año anterior, algo que espera que se normalice en el cuarto trimestre.</p>
 <p>No todo fue a la baja. Las ventas por internet en México crecieron 15.8% y el valor de la mercancía vendida por ese canal avanzó 14.8%, mucho más rápido que el negocio total. Además, la cadena abrió 42 tiendas en el trimestre, 39 de ellas en México, y 36 con el formato Bodega Aurrera, su apuesta para llegar a los bolsillos más ajustados.</p>
 <p>Walmex mantuvo su proyección para todo 2026: un crecimiento de ventas consolidadas de entre 3.5% y 4.5% sin efectos cambiarios. El trimestre deja una señal clara para la economía mexicana: el consumo sigue, pero más lento, más caro de operar y cada vez más por internet.</p>
+
+<a class="note-more" href="blog/walmex-vendio-mas-pero-gano-menos-el-consumo.html">Leer nota completa →</a>
 </article>
 <div class="ad-slot"></div>
 <article class="article">
@@ -1720,6 +1882,8 @@
 <p>El cuarto paso es mirar el mercado, pero sin copiarlo a ciegas. Saber lo que cobra la competencia sirve para conocer el rango en el que los clientes ya están acostumbrados a pagar. Si tu precio queda muy por encima, hay que poder explicar por qué: mejores materiales, entrega más rápida, garantía, atención. Si queda muy por debajo, la pregunta es si los costos están bien contados o si se está regalando el trabajo. Competir solo por ser el más barato es la carrera que más negocios mata: siempre habrá alguien dispuesto a perder más.</p>
 <p>Hay dos trampas finales que conviene vigilar. La primera son los descuentos: bajar el precio 20% no baja la ganancia 20%, la puede borrar por completo si el margen era del 30%. La segunda son las comisiones: vender por una app o con tarjeta tiene un costo por venta que debe entrar en la cuenta desde el inicio, no descubrirse al final del mes. Un precio bien puesto se revisa cada tres o seis meses, porque los costos cambian y el precio que funcionaba en enero puede estar perdiendo dinero en noviembre.</p>
 <p>Al final, el precio correcto es el que cubre todos los costos —incluido tu tiempo—, deja el margen que decidiste y el cliente entiende por qué lo vale. No se trata de cobrar caro, se trata de cobrar completo: cada venta debe dejar algo, porque un negocio que vende mucho y no gana nada no es un negocio que crece, es uno que se cansa.</p>
+
+<a class="note-more" href="blog/como-ponerle-precio-a-tu-producto-o-servicio.html">Leer nota completa →</a>
 </article>
 <div class="ad-slot"></div>
 <article class="article">
@@ -1733,6 +1897,8 @@
 <p>Hay, sin embargo, un límite claro: México no negociará un tratado de libre comercio con China. La presidenta lo dijo en su conferencia del 12 de noviembre: "Con China no tenemos Tratado de Libre Comercio, ni vamos hacia allá". El secretario de Economía, Marcelo Ebrard, permanecerá en China para seguir las conversaciones comerciales. La postura busca atraer capital chino sin poner en riesgo el T-MEC con Estados Unidos y Canadá, con quienes se realiza más del 80 por ciento del comercio de México.</p>
 <p>El viaje ocurre después de que México subió los aranceles a productos de países sin tratado comercial, una medida aprobada en diciembre de 2025 para incentivar la producción nacional. China está entre los países alcanzados, aunque el gobierno ha insistido en que el cambio no fue dirigido solo contra sus mercancías: la idea es que las empresas fabriquen en México en lugar de importar productos terminados.</p>
 <p>El foro que recibe a Sheinbaum no es menor: las 21 economías de la APEC representan alrededor del 61.6 por ciento del producto interno bruto mundial, y el organismo estima que crecerán 3.4 por ciento este año. Además, México fue elegido por unanimidad para presidir y organizar la cumbre de 2028. La agenda oficial va del 17 al 19 de noviembre y el regreso de la presidenta está previsto para el viernes 20.</p>
+
+<a class="note-more" href="blog/sheinbaum-vuela-a-china-para-la-apec-inversiones.html">Leer nota completa →</a>
 </article>
 <div class="ad-slot"></div>
 <article class="article">
@@ -1746,6 +1912,8 @@
 <p>Lo que la gente busca comprar también marca el mapa del consumo: moda encabeza el interés con 38 por ciento de los consumidores, seguida de electrónicos con 30 por ciento, belleza y cuidado personal con 27 por ciento, electrodomésticos con 24 por ciento y celulares con 21 por ciento. La Asociación Mexicana de Venta Online (AMVO) encontró que el 77 por ciento de los consumidores potenciales ve probable o muy probable comprar durante esta edición.</p>
 <p>Las cifras muestran un programa que ha crecido sin pausa: en su primera edición, en 2011, El Buen Fin movió 106,000 millones de pesos; quince años después, la meta es más del doble. La Asociación Nacional de Tiendas de Autoservicio y Departamentales (ANTAD) prevé un aumento nominal de 8.4 por ciento en ventas, que podría llegar a 10.75 por ciento en su proyección más favorable. El programa nació en 2011 como un esfuerzo público-privado para impulsar el comercio formal y los pagos electrónicos.</p>
 <p>Como incentivo extra, el Servicio de Administración Tributaria (SAT) repartirá 500 millones de pesos en premios en su sorteo oficial, que se realizará el 4 de diciembre y cuyos ganadores se publicarán el 7 de diciembre. Quedan dos días de ofertas: el programa cierra el martes 17, y será entonces cuando se sepa si el gasto de los hogares alcanzó la meta de 235,000 millones.</p>
+
+<a class="note-more" href="blog/el-buen-fin-2026-va-por-235-000.html">Leer nota completa →</a>
 </article>
 <div class="ad-slot"></div>
 <article class="article">
@@ -1759,6 +1927,8 @@
 <p>La decisión más famosa de Candler fue no subir el precio. El vaso de Coca-Cola costó cinco centavos durante casi 70 años, mientras todo lo demás subía. Era un precio que cualquiera podía pagar, y eso convirtió la bebida en un hábito diario para millones de personas. En 1895 ya se vendía en todos los estados de Estados Unidos, y en 1919 un grupo de inversionistas compró la empresa por 25 millones de dólares.</p>
 <p>El modelo que hizo crecer el negocio fue el embotellado por socios locales: la compañía vendía el concentrado y otros empresarios embotellaban y repartían la bebida en su región. Así, Coca-Cola se expandió por el mundo sin tener que construir todas las fábricas ni contratar a todos los repartidores. Hoy sus productos se venden en más de 200 países y se consumen unas 1,900 millones de porciones al día.</p>
 <p>En 2024, The Coca-Cola Company facturó 47,100 millones de dólares. La historia empezó con un farmacéutico que vendía nueve vasos al día y perdía dinero; el negocio se hizo gigante cuando alguien más vio que lo valioso no era el jarabe, sino el precio accesible, la marca y una red de socios que llevara la botella hasta el último rincón.</p>
+
+<a class="note-more" href="blog/coca-cola-el-jarabe-de-farmacia-que-se.html">Leer nota completa →</a>
 </article>
 <div class="ad-slot"></div>
           <article class="article">
@@ -1775,7 +1945,9 @@
             <p>Con el resultado final, The Weeknd dejó atrás la marca de Elton John, cuya gira de despedida Farewell Yellow Brick Road había recaudado alrededor de 939 millones de dólares. En la lista general de las giras más taquilleras, After Hours Til Dawn quedó en tercer lugar, solo por detrás de The Eras Tour de Taylor Swift, que superó los 2,000 millones de dólares, y de Music of the Spheres de Coldplay.</p>
             <p>La gira también dejó récords locales: en Los Ángeles, The Weeknd dio siete conciertos en el estadio SoFi, una marca para un artista masculino en ese recinto. Y durante los cuatro años del recorrido se recaudaron 8.5 millones de dólares destinados al fondo humanitario XO y a la organización Global Citizen.</p>
             <p>Lo que empezó como la celebración en vivo de dos álbumes, After Hours (2020) y Dawn FM (2022), terminó convertido en uno de los mayores fenómenos comerciales de la música en directo. Las cifras corresponden a recaudación bruta por la venta de boletos, no a la ganancia neta del artista ni de la gira.</p>
-          </article>
+          
+<a class="note-more" href="blog/the-weeknd-cerro-la-gira-mas-taquillera-de.html">Leer nota completa →</a>
+</article>
           <div class="ad-slot"></div>
           <article class="article">
             <img class="article-img" src="assets/blog-camiones-2026.jpg" alt="Camiones de carga nuevos en una planta de vehículos pesados en México" loading="lazy" />
@@ -1791,7 +1963,9 @@
             <p>El contraste aparece en el mercado interno. En octubre, las ventas al menudeo —las unidades que se venden directamente a los compradores— crecieron 5.1 por ciento y llegaron a 3,162 vehículos. Sin embargo, en lo que va del año se han vendido 28,479 unidades, un 15.4 por ciento menos que en el mismo periodo de 2025. El golpe mayor lo sufren los autobuses: apenas 4,320 vendidos en diez meses, una caída de 24.2 por ciento; el transporte de carga retrocede 13.6 por ciento.</p>
             <p>La ANPACT señala dos frenos para el mercado nacional: la importación de vehículos pesados usados, que compite en desigualdad con los nuevos, y el aumento de autobuses procedentes de países con los que México no tiene tratados de libre comercio. Eso pesa sobre todo en los pequeños empresarios del autotransporte, a los que les cuesta más renovar sus unidades.</p>
             <p>La propuesta del organismo, en voz de su presidente ejecutivo Rogelio Arzate, es fortalecer el financiamiento y crear programas de chatarrización, es decir, retirar vehículos antiguos para sustituirlos por unidades más seguras, eficientes y con menores emisiones, además de contar con condiciones regulatorias y fiscales estables. El reto de la industria ya no es solo producir más: es que los transportistas mexicanos puedan comprar lo que las fábricas hacen.</p>
-          </article>
+          
+<a class="note-more" href="blog/mexico-fabrica-mas-camiones-pero-sus-transportistas-compran.html">Leer nota completa →</a>
+</article>
           <div class="ad-slot"></div>
 <article class="article">
 <img class="article-img" src="assets/blog-mcdonalds-2026.jpg" alt="Restaurante de hamburguesas estilo años 50 al atardecer" loading="lazy" />
@@ -1804,6 +1978,8 @@
 <p>La fórmula de Kroc no era vender hamburguesas, sino vender el sistema para vender hamburguesas. Cada nuevo restaurante lo abría un franquiciado que pagaba por usar la marca, el método y el menú, mientras la empresa cobraba regalías y, en muchos casos, la renta del local. El modelo funcionó a una velocidad asombrosa: en 1968 ya había 1,000 restaurantes y en 1972 las ventas de toda la cadena superaron los 1,000 millones de dólares al año.</p>
 <p>Hoy McDonald's es una de las cadenas de restaurantes más grandes del planeta: a finales de 2025 sumaba 45,356 locales en más de 100 países, de los cuales alrededor del 95 por ciento son operados por franquiciados. Sus ingresos en 2025 fueron de 26,885 millones de dólares y las ventas de todo el sistema alcanzaron 139,400 millones de dólares. Buena parte de ese dinero no viene de la comida, sino de las rentas y regalías que pagan los franquiciados: la empresa es dueña de cerca del 56 por ciento de los terrenos y del 80 por ciento de los edificios de sus restaurantes.</p>
 <p>Detrás de los arcos dorados hay un cambio de negocio: el restaurante que empezó vendiendo hamburguesas baratas y rápidas se convirtió en uno de los mayores propietarios de inmuebles comerciales del mundo, con ingresos que llegan cada vez que alguien abre un local con su nombre, venda ese día mucho o poco.</p>
+
+<a class="note-more" href="blog/mcdonald-s-de-un-puesto-de-hamburguesas-a.html">Leer nota completa →</a>
 </article>
 <div class="ad-slot"></div>
           <article class="article">
@@ -1820,7 +1996,9 @@
             <p>Hay dos márgenes que conviene no confundir. El margen bruto es el que se calcula solo con el costo directo del producto, como en el ejemplo de la torta. El margen neto es lo que queda después de pagar todo lo demás: la renta, la luz, los sueldos y los impuestos. Por eso un negocio puede vender miles de piezas al día y aun así cerrar el mes en números rojos, si sus costos fijos se comen lo que deja cada venta.</p>
             <p>El margen también explica por qué dos negocios que venden lo mismo pueden vivir realidades distintas. Una tienda que compra al mayoreo y vende barato puede ganar menos por pieza, pero compensarlo con volumen; otra que vende poco y caro puede ganar más por cada venta. Ni una ni otra está mal: lo que importa es que el margen alcance para cubrir los gastos fijos y dejar una ganancia.</p>
             <p>En México, donde los precios de los insumos suben y bajan con la inflación y el tipo de cambio, el margen es el primer número que se mueve. Cuando sube el precio del gas, de la harina o del transporte, el margen se achica si el precio de venta se queda igual. Por eso revisar el margen de vez en cuando es una de las formas más directas de saber si un negocio sigue siendo rentable o si los costos ya se están comiendo la ganancia.</p>
-          </article>
+          
+<a class="note-more" href="blog/el-margen-lo-que-realmente-te-queda-de.html">Leer nota completa →</a>
+</article>
           <div class="ad-slot"></div>
           <article class="article">
             <img class="article-img" src="assets/blog-tiendas-3b-2026.jpg" alt="Interior de una tienda de descuento con estantes llenos de productos" loading="lazy" />
@@ -1836,7 +2014,9 @@
             <p>El crecimiento no viene solo de abrir tiendas. Las ventas en los establecimientos con más de un año crecieron 20.5 por ciento frente al mismo trimestre de 2025, y dos terceras partes de ese aumento llegaron por más volumen y más clientes, no por subir precios. En los primeros nueve meses del año, la cadena acumuló ingresos por 77 mil 343 millones de pesos, 37.7 por ciento más que en 2025, y generó 7 mil 51 millones de pesos de flujo de efectivo operativo, 127.8 por ciento más que el año anterior.</p>
             <p>La expansión sigue a ritmo de gigante: 141 tiendas netas en el trimestre, 3 mil 765 en total, y 603 en los últimos doce meses, apenas 99 menos que las 702 que sumó OXXO en el mismo periodo. La empresa abrió además cuatro centros de distribución en el trimestre y llegó a 25 regiones logísticas, con una meta de entre 590 y 630 aperturas netas para todo 2026.</p>
             <p>La presión se siente en el sector. FEMSA respondió con Bara, su cadena de descuento, que llegó a 898 tiendas y creció 10.3 por ciento en ventas de tiendas comparables. OXXO, con 24 mil 759 tiendas, creció 9.2 por ciento en el mismo indicador. Las tiendas viejas de 3B crecen más del doble de rápido que las de OXXO, pero con un margen tan delgado que cualquier aumento de costos se come la ganancia casi completa.</p>
-          </article>
+          
+<a class="note-more" href="blog/tiendas-3b-vendio-28-mil-millones-de-pesos.html">Leer nota completa →</a>
+</article>
           <div class="ad-slot"></div>
           <article class="article">
             <img class="article-img" src="assets/blog-nintendo-2026.jpg" alt="Cartas hanafuda japonesas decoradas con flores sobre una mesa de madera, con una consola portátil moderna al fondo" loading="lazy" />
@@ -1852,7 +2032,9 @@
             <p>En 1983, justo cuando la industria del videojuego se desplomaba en Estados Unidos por la crisis de ese año, Nintendo lanzó en Japón su consola Famicom, que llegó a América como la Nintendo Entertainment System. La consola devolvió la confianza a las tiendas y a los jugadores, y Nintendo se quedó con el mercado: después vinieron la Game Boy en 1989, la Wii en 2006, que vendió más de 100 millones de unidades llevando el videojuego a las salas de las casas, y la Switch en 2017, que se puede usar como consola de casa y como portátil.</p>
             <p>Hoy la Switch original suma 157.20 millones de consolas vendidas y su sucesora, la Switch 2, lanzada en junio de 2025, ya llegó a 26.35 millones a septiembre de 2026, según los propios resultados de la empresa. Nintendo ya no vive solo de las consolas: la película de Super Mario Bros. de 2023 recaudó más de 1,300 millones de dólares en taquilla, y en octubre de 2024 la empresa abrió el Museo Nintendo en Kioto, en su antigua fábrica de cartas. En la primera mitad de su año fiscal, de abril a septiembre de 2026, Nintendo vendió 966,000 millones de yenes y ganó 216,500 millones de yenes de utilidad operativa.</p>
             <p>El caso muestra cómo se construye el dinero detrás de un personaje: Nintendo no vende solo aparatos, vende juegos y personajes que la gente reconoce en cualquier país —Mario, Zelda, Pokémon— y cada consola nueva vuelve a vender esos mismos mundos a millones de hogares. De un taller de cartas hechas a mano a una de las empresas de entretenimiento más grandes del mundo, el negocio cambió de producto tres veces, pero siempre vendió lo mismo: jugar en familia.</p>
-          </article>
+          
+<a class="note-more" href="blog/nintendo-la-empresa-que-nacio-vendiendo-cartas-en.html">Leer nota completa →</a>
+</article>
           <div class="ad-slot"></div>
           <article class="article">
             <img class="article-img" src="assets/blog-flujo-caja-2026.jpg" alt="Mostrador de una pequeña tienda mexicana con caja registradora, billetes y monedas, y una libreta de ingresos y egresos" loading="lazy" />
@@ -1868,7 +2050,9 @@
             <p>En México el tema pesa porque casi todos los negocios son pequeños. Según el INEGI, las micro, pequeñas y medianas empresas son el 99.8% de los establecimientos del país y concentran alrededor del 70% del empleo. Y la rotación es alta: entre mayo de 2019 y mayo de 2023 nacieron 1.7 millones de establecimientos y murieron 1.4 millones, según el Estudio sobre la Demografía de los Negocios (EDN) 2023 del INEGI.</p>
             <p>Los estudios históricos del mismo instituto muestran además que, de cada 100 establecimientos que nacen, casi 52 cierran antes de cumplir dos años, y 31 no llegan al primer aniversario. La Asociación de Emprendedores de México (ASEM) señala que la falta de liquidez está entre las principales causas de cierre: alrededor del 35% de las pymes salieron de circulación por esa razón, según la asociación.</p>
             <p>Por eso el flujo de caja se mira como un termómetro de la economía cotidiana: cuando los negocios pequeños se quedan sin efectivo, lo primero que se resiente es el empleo y el comercio de la calle, porque son ellos los que dan trabajo a la mayoría de la gente. No es un asunto de contabilidad: es el dinero que circula —o deja de circular— en la economía real.</p>
-          </article>
+          
+<a class="note-more" href="blog/flujo-de-caja-por-que-un-negocio-puede-2026-11-13.html">Leer nota completa →</a>
+</article>
           <div class="ad-slot"></div>
           <article class="article">
             <img class="article-img" src="assets/blog-turismo-2026.jpg" alt="Playa del Caribe mexicano con turistas y un crucero al fondo" loading="lazy" />
@@ -1884,7 +2068,9 @@
             <p>Los cruceros aportaron dos de los cinco récords: los puertos mexicanos recibieron 9 millones de cruceristas, 12.3 por ciento más, y su gasto sumó 778 millones de dólares, 16.3 por ciento más que en 2025. El turismo nacional también creció: 80.6 millones de mexicanos viajaron por el país en esos nueve meses, 713 mil más que el año anterior.</p>
             <p>Cada dólar que gasta un visitante es dinero que entra al país y se reparte entre hoteles, restaurantes, transporte, guías y comercios de los destinos. Por eso el turismo pesa tanto en la economía: genera empleo en muchas ciudades y trae divisas, las monedas extranjeras que México necesita para pagar lo que compra fuera. Incluso septiembre, que suele ser uno de los meses más flojos del año, cerró con récord: 3.3 millones de turistas internacionales, 2.7 por ciento más, con un gasto promedio de mil 189 dólares por persona.</p>
             <p>Los récords llegan justo cuando arranca el Buen Fin, del 13 al 17 de noviembre, y la Secretaría de Turismo estima que la actividad turística crecerá más de 3 por ciento durante estos días y atraerá a más de 2 millones de turistas. La semana también dejó otra señal del momento que vive el sector: del 10 al 12 de noviembre, Guadalajara fue sede por primera vez de la Feria Internacional de Turismo ITB Américas.</p>
-          </article>
+          
+<a class="note-more" href="blog/mexico-rompe-cinco-records-turisticos-llegaron-74-9.html">Leer nota completa →</a>
+</article>
 
           <!-- Espacio publicitario (Google AdSense) · Después de esta nota. -->
           <div class="ad-slot"></div>
@@ -1903,7 +2089,9 @@
             <p>La ruptura con Onitsuka llegó también en 1971. Blue Ribbon Sports decidió fabricar sus propios tenis y necesitaba un nombre nuevo. Lo tomaron de Niké, la diosa griega de la victoria, y el logotipo, la famosa palomita o &quot;swoosh&quot;, lo dibujó Carolyn Davidson, una estudiante de diseño gráfico de la Universidad Estatal de Portland, por 35 dólares. Años después, la empresa le regaló 500 acciones como reconocimiento. Nike salió a la bolsa en 1980 y el nombre que nació en una oficina pequeña se volvió una marca mundial.</p>
             <p>La apuesta que cambió el tamaño de la empresa llegó en 1984, con un novato de la NBA que todavía no había jugado un partido profesional: Michael Jordan. Nike le ofreció 500,000 dólares al año por cinco años, unos 2.5 millones en total, además de su propia línea de tenis, algo casi inaudito para un recién llegado. La empresa esperaba vender 3 millones de dólares de Air Jordan en tres o cuatro años. En el primer año vendió 126 millones de dólares. Décadas después, solo la marca Jordan generó unos 5,100 millones de dólares en 2022.</p>
             <p>Hoy Nike es la empresa de ropa y calzado deportivo más grande del mundo por ingresos, pero sus cuentas muestran que ni los gigantes están exentos de tropiezos: en su año fiscal 2025, terminado en mayo, vendió 46,300 millones de dólares, un 10% menos que los 51,400 millones del año anterior. La distancia entre ese número y los 1,200 dólares de 1964 es la medida de lo que construyeron un corredor que vendía tenis en los estacionamientos y un entrenador que experimentaba con una waflera.</p>
-          </article>
+          
+<a class="note-more" href="blog/nike-nacio-con-1-200-dolares-y-unos.html">Leer nota completa →</a>
+</article>
 
           <!-- Espacio publicitario (Google AdSense) · Después de esta nota. -->
           <div class="ad-slot"></div>
@@ -1922,7 +2110,9 @@
             <p>El desplome no se quedó en Nvidia. El S&amp;P 500 bajaba 0.38% y el Nasdaq también retrocedía, arrastrados por las empresas ligadas a la inteligencia artificial: CoreWeave caía alrededor de 6% y Nebius 18%. En cambio, sus rivales directos subieron: AMD ganó 1.7% y Broadcom 0.8%, porque el mercado ve una oportunidad para los competidores en medio de la crisis de liderazgo. Y hay una paradoja: a unas 12 veces sus ganancias esperadas, Nvidia cotiza a su valuación más baja desde 2012.</p>
             <p>La próxima prueba llega el martes 17 de noviembre, cuando Nvidia publique los resultados de su tercer trimestre fiscal. El mercado espera ingresos de unos 108 mil millones de dólares, 91% más que hace un año, y una ganancia neta de más de 60 mil millones, 89% más. La empresa cerró su año fiscal 2026 con ingresos de 215,938 millones de dólares, 65% más que el ejercicio anterior. Kress, que maneja las finanzas de Nvidia desde 2013, deberá sostener las operaciones mientras se elige al sucesor, en medio de las restricciones de Estados Unidos a la exportación de chips avanzados hacia China.</p>
             <p>Para la gente común, el efecto pasa por los mercados: Nvidia es una de las empresas más valiosas del mundo y pieza central del auge de la inteligencia artificial, así que su caída mueve los índices donde están invertidos los fondos de retiro y el ahorro de millones de personas. También deja en duda quién dirigirá a la empresa que fabrica los chips de la inteligencia artificial, justo cuando el sector enfrenta dudas sobre el ritmo de inversión en centros de datos.</p>
-          </article>
+          
+<a class="note-more" href="blog/la-renuncia-de-jensen-huang-desploma-a-nvidia.html">Leer nota completa →</a>
+</article>
 
           <!-- Espacio publicitario (Google AdSense) · Después de esta nota. -->
           <div class="ad-slot"></div>
@@ -1941,7 +2131,9 @@
             <p>El gobierno presentó la inversión como parte del Plan México, su estrategia para atraer fábricas y fortalecer la producción nacional. Ebrard adelantó que pronto se darán a conocer nuevas cifras de inversión extranjera directa que, aseguró, muestran niveles históricos y un crecimiento mayor al previsto. Sheinbaum, por su parte, destacó que la inversión en transmisión y distribución de electricidad registra niveles históricos, un rubro directamente ligado a lo que fabricará la nueva planta.</p>
             <p>El anuncio llega en un momento mixto para la industria. El INEGI reportó que la actividad industrial cayó 1.4% en septiembre, por lo que el gobierno ha insistido en mostrar proyectos de inversión productiva. Al mismo tiempo, el propio INEGI informó que la economía creció 3.2% en el tercer trimestre de 2026 frente al mismo periodo de 2025, con avances en los tres sectores: primario, secundario y terciario. La inversión de WEG, entonces, aterriza en una economía que crece, pero con una industria que todavía no despega del todo.</p>
             <p>Para la gente común, el efecto no es inmediato: los empleos llegarán de forma gradual hasta 2030. Pero una planta de este tamaño mueve mucho más que sus propios trabajadores: necesita proveedores de materiales, transporte, servicios de mantenimiento y mano de obra técnica en Hidalgo y en otros estados. Y fabricar en México equipos que hoy se importan puede abaratar, con el tiempo, la infraestructura eléctrica que usan las empresas y los servicios digitales de todos los días.</p>
-          </article>
+          
+<a class="note-more" href="blog/weg-invertira-250-millones-de-dolares-en-hidalgo.html">Leer nota completa →</a>
+</article>
 
           <!-- Espacio publicitario (Google AdSense) · Después de esta nota. -->
           <div class="ad-slot"></div>
@@ -1960,7 +2152,9 @@
             <p>Lo que más llama la atención es lo poco que costó hacerla. Según la agencia AP, el presupuesto de producción fue de menos de 20 millones de dólares, unos 19 millones. Con su primer fin de semana en cines, la película ya recaudó más del triple de lo que costó producirla. El contraste con su rival de cartelera es enorme: Ramayana, la superproducción india estrenada el mismo fin de semana, costó unos 210 millones de dólares, más de diez veces más, y recaudó 55 millones en todo el mundo, menos que los 63 de Godzilla.</p>
             <p>Buena parte del dinero llegó de las salas más caras. El 74% de la recaudación en Norteamérica salió de formatos premium, y solo las salas IMAX aportaron 12.7 millones de dólares, el 40% del total. La película se rodó pensando en ese formato, y Toho, el estudio japonés que la produjo, la distribuyó en Estados Unidos con su propio sello, GKIDS, apenas tres días después del estreno en Japón.</p>
             <p>La cinta es la continuación de Godzilla Minus One (2023), ganadora del Óscar a los mejores efectos visuales, y de nuevo la dirigió Takashi Yamazaki, ambientada en el Japón de 1949, dos años después de la Segunda Guerra Mundial. Con un 90% de críticas positivas en Rotten Tomatoes, sigue en cartelera y su recaudación continúa creciendo.</p>
-          </article>
+          
+<a class="note-more" href="blog/godzilla-arrasa-en-taquilla-con-una-pelicula-que.html">Leer nota completa →</a>
+</article>
 
           <!-- Espacio publicitario (Google AdSense) · Después de esta nota. -->
           <div class="ad-slot"></div>
@@ -1979,7 +2173,9 @@
             <p>Detrás del frenazo están los aranceles de Estados Unidos. Desde abril de 2025, ese país cobra 25% a los vehículos importados, salvo los que cumplen las reglas de contenido regional del T-MEC. Las armadoras han respondido con reestructuraciones, traslados de producción y paros por cambio de modelo; General Motors, por ejemplo, redujo su producción 45.5% en el mes. La consultora J.D. Power ya recortó su pronóstico de producción total de México para 2026, de 3.9 a 3.8 millones de unidades.</p>
             <p>En lo que va del año, la industria acumula 3,254,062 vehículos producidos, 3.9% menos que en enero-octubre de 2025, y 2,786,760 exportados, 3.3% menos. La caída de octubre no se explica solo por los aranceles: también pesa el fin de los incentivos de Estados Unidos para comprar autos eléctricos, que obligó a frenar la producción de varios modelos.</p>
             <p>Mientras la producción se contrae, el mercado interno va en sentido contrario: en octubre se vendieron en México 137,395 vehículos ligeros, 3.1% más que un año antes, y en los primeros diez meses del año las ventas suman 1,287,225 unidades, 4.8% más. La industria automotriz es uno de los mayores generadores de empleo y de divisas del país, por lo que un freno de este tamaño se siente más allá de las plantas: en los proveedores, en los empleos que dependen de ellos y en las exportaciones que sostienen la balanza comercial.</p>
-          </article>
+          
+<a class="note-more" href="blog/la-industria-automotriz-tuvo-su-peor-octubre-desde.html">Leer nota completa →</a>
+</article>
 
           <!-- Espacio publicitario (Google AdSense) · Después de esta nota. -->
           <div class="ad-slot"></div>
@@ -1998,7 +2194,9 @@
             <p>En la comparación con un año antes, la industria todavía crece: 1.4% anual, con lo que suma seis meses consecutivos en positivo. Pero el ritmo se enfrió con fuerza frente al 3.5% registrado en agosto. En lo que va del año, de enero a septiembre, la actividad industrial acumula apenas 1.1% de crecimiento respecto al mismo periodo de 2025, y el tercer trimestre cerró prácticamente plano, con solo 0.1% más que el trimestre anterior.</p>
             <p>La industria es donde se produce buena parte de lo que se vende y se exporta, y donde trabajan millones de personas en fábricas, obras y plantas. Cuando la producción se frena, las empresas reciben menos pedidos, se contrata con más cautela y la construcción, que emplea a mucha gente por obra, se resiente primero. El dato llega en un momento en que la economía en conjunto creció 0.9% en el tercer trimestre, por debajo del 1.4% del trimestre anterior, según la estimación del propio Inegi.</p>
             <p>El Inegi publicará el dato de octubre en diciembre, y ahí se verá si septiembre fue un tropiezo aislado o el inicio de una desaceleración más larga. Por ahora, la industria sigue en terreno positivo en el año, pero con el freno de mano puesto.</p>
-          </article>
+          
+<a class="note-more" href="blog/la-industria-mexicana-se-enfria-cayo-1-4.html">Leer nota completa →</a>
+</article>
 
           <!-- Espacio publicitario (Google AdSense) · Después de esta nota. -->
           <div class="ad-slot"></div>
@@ -2017,7 +2215,9 @@
             <p>México sale mejor parado que sus vecinos en este informe. Brasil vería su crecimiento bajar de 2% en 2026 a 1.6% en 2027, y Argentina, que crecería 2.9% y 3% en esos años, también enfrenta revisiones a la baja para el mediano plazo. La diferencia importa porque los inversionistas comparan países antes de decidir dónde poner su dinero, y un pronóstico al alza vuelve a México más atractivo frente a la región.</p>
             <p>La otra cara del informe es la inflación. Moody's estima que subirá de 3.7% en 2026 a 3.9% en 2027, para moderarse a 3.5% en 2028. La agencia también señaló la sorpresiva decisión del Banco de México de recortar su tasa de interés a 6.25% el 5 de noviembre, pese a la depreciación del peso, y anticipa una pausa prolongada en los recortes por los riesgos inflacionarios. Eso significa que el crédito seguirá costando caro por más tiempo, aunque la economía crezca más de lo esperado.</p>
             <p>Un pronóstico mejor no es dinero inmediato en el bolsillo, pero sí cambia el escenario: más inversión, más actividad en las empresas que proveen a la industria tecnológica y más confianza para contratar y prestar. Eso sí, son proyecciones, no resultados cerrados: Moody's mismo advierte que el impulso de la inversión en infraestructura digital perderá fuerza durante 2027, así que las cifras pueden volver a moverse conforme lleguen nuevos datos de producción, inversión y comercio.</p>
-          </article>
+          
+<a class="note-more" href="blog/moody-s-duplica-su-pronostico-de-crecimiento-para.html">Leer nota completa →</a>
+</article>
 
           <!-- Espacio publicitario (Google AdSense) · Después de esta nota. -->
           <div class="ad-slot"></div>
@@ -2036,7 +2236,9 @@
             <p>El otro dato que marcó el debate es el peso de la deuda. Solo en intereses se pagarán 1 billón 574 mil 950 millones de pesos en 2027, unos 530 mil millones más que toda la inversión física prevista para el país. Además, el presupuesto contempla un déficit de un billón 358 mil 558 millones de pesos, es decir, el gobierno gastará más de lo que espera recaudar y cubrirá la diferencia con deuda.</p>
             <p>La aprobación quedó completa en la madrugada de este miércoles 11 de noviembre: tras una sesión de casi 20 horas, la Cámara aprobó el dictamen también en lo particular, con 352 votos a favor y 130 en contra. Se discutieron 1,760 reservas de los seis grupos parlamentarios y ninguna prosperó, por lo que el presupuesto quedó sin cambios. El decreto fue remitido al Ejecutivo federal para su publicación en el Diario Oficial de la Federación.</p>
             <p>Para la gente común, el presupuesto es el documento que decide cuánto dinero habrá el próximo año para salud, seguridad, educación y programas sociales, y cuánto se irá en pagar intereses de deudas pasadas. Con los precios subiendo —la inflación llegó a 3.75% anual en octubre— y la tasa de interés de Banxico en 6.25%, cada peso que se destina a intereses es un peso que no llega a obras ni servicios.</p>
-          </article>
+          
+<a class="note-more" href="blog/diputados-aprueban-el-presupuesto-2027-10-6-billones.html">Leer nota completa →</a>
+</article>
 
           <!-- Espacio publicitario (Google AdSense) · Después de esta nota. -->
           <div class="ad-slot"></div>
@@ -2055,7 +2257,9 @@
             <p>El dato importa porque cambia lo que los mercados esperan de la Reserva Federal. Con los precios subiendo más de lo previsto, crece la expectativa de que el banco central estadounidense vuelva a subir su tasa de interés en su reunión del 8 y 9 de diciembre, cuando hoy se ubica entre 3.75% y 4%. Tasas más altas en Estados Unidos suelen atraer capitales hacia ese país y fortalecer al dólar frente a otras monedas, incluido el peso. El gobernador de la Fed, Christopher Waller, ya había advertido que el banco central debería considerar un aumento mayor si la inflación se mantenía alta.</p>
             <p>El nerviosismo también llegó a la Bolsa Mexicana de Valores. El índice S&amp;P/BMV IPC bajó 0.26% y cerró en 71,668.05 puntos, después de una racha de cinco jornadas de ganancias que lo había llevado a un máximo histórico de 72,227.22 unidades. Las mineras encabezaron la caída: Grupo México perdió 1.59% y Peñoles 1.33%, en una jornada en la que además los precios del petróleo bajaron de 90 dólares por barril.</p>
             <p>El informe estadounidense tuvo una particularidad: el BLS no pudo publicar la tasa interanual general de inflación porque el cierre del gobierno federal de Estados Unidos, entre octubre y noviembre de 2025, impidió recopilar los datos de ese periodo. La próxima cita clave para los mercados será la decisión de la Fed en diciembre. En México, el dato llega días después de que Banxico recortara su tasa de referencia a 6.25%, un movimiento en sentido contrario al que ahora se anticipa en Estados Unidos.</p>
-          </article>
+          
+<a class="note-more" href="blog/la-inflacion-de-estados-unidos-enfria-al-peso.html">Leer nota completa →</a>
+</article>
 
           <!-- Espacio publicitario (Google AdSense) · Después de esta nota. -->
           <div class="ad-slot"></div>
@@ -2075,7 +2279,9 @@
             <p>La misma cuenta sirve con cualquier negocio. Si los costos fijos son 5,000 pesos al mes y se ganan 50 pesos por cada venta, se necesitan 100 ventas para no perder ni ganar. La venta 101 ya es ganancia. Saber ese número cambia la forma de ver el mes: ya no es "a ver cómo nos va", es "me faltan 30 ventas".</p>
             <p>Conocer ese número cambia las decisiones del día a día. Si el punto de equilibrio está muy alto, hay tres palancas: subir el precio, bajar el costo de cada unidad o recortar un costo fijo. Y si el número que sale es una cantidad imposible de vender, el problema no es vender más: el precio está bajo o los costos están altos. También sirve para evaluar ideas nuevas: antes de rentar un local más grande o contratar a alguien, se calcula cuántas ventas extra hacen falta para que ese gasto se pague solo. Y cuando un producto no alcanza su punto de equilibrio mes tras mes, los números están diciendo que algo hay que cambiar.</p>
             <p>El punto de equilibrio no es un dato para mirar una vez al año. Los precios de los proveedores cambian, la renta sube y los costos fijos se mueven, así que el número también se mueve. Recalcularlo cada mes, con los costos reales de ese mes, toma unos minutos y deja claro cuánto falta para salir tablas y cuánto sobra cuando ya se salió. Es la cuenta que separa vender mucho de ganar dinero.</p>
-          </article>
+          
+<a class="note-more" href="blog/el-punto-de-equilibrio-cuantas-ventas-necesitas-para.html">Leer nota completa →</a>
+</article>
 
           <!-- Espacio publicitario (Google AdSense) · Después de esta nota. -->
           <div class="ad-slot"></div>
@@ -2094,7 +2300,9 @@
             <p>El delito más frecuente fue la extorsión, con 787,000 casos, de los cuales el 91% ocurrió por teléfono. Le siguieron el robo hormiga y el robo o asalto de bienes o dinero; entre los tres concentraron el 59% de los delitos. En total, el Inegi estimó 3 millones de delitos contra 1.4 millones de establecimientos, un promedio de 2.2 hechos por cada negocio víctima. La proporción de negocios afectados bajó ligeramente, de 27.2% en 2023 a 25.9% en 2025, aunque el número absoluto de víctimas subió desde 1.3 millones.</p>
             <p>El golpe no se reparte parejo. Tabasco encabezó la lista de estados donde más negocios cancelaron inversiones, con 32.1%, seguido de Morelos (27.4%) y Puebla (23.9%). Por tamaño, los establecimientos medianos fueron los más afectados, con 51.9% de victimización, y por sector, el comercio encabezó con 30.5%. Además, más de la mitad del costo total —el 51.2%— no fueron pérdidas por delitos, sino gasto en medidas preventivas: cámaras, seguridad privada y otros blindajes que se pagan mes a mes.</p>
             <p>La percepción acompaña a las cifras: entre marzo y mayo de 2026, el 71.2% de los establecimientos consideró inseguro su estado y el 54.8% vio inseguro transportar productos por carretera. La inseguridad fue señalada como el principal problema por el 57.1% de los negocios. Y casi nada llega a la justicia: solo se denunció el 9.9% de los delitos y apenas el 8.2% derivó en una carpeta de investigación; entre los casos con investigación abierta, el 46.4% seguía en trámite y en el 29% no sucedió nada.</p>
-          </article>
+          
+<a class="note-more" href="blog/la-inseguridad-costo-a-los-negocios-mexicanos-115.html">Leer nota completa →</a>
+</article>
 
           <!-- Espacio publicitario (Google AdSense) · Después de esta nota. -->
           <div class="ad-slot"></div>
@@ -2113,7 +2321,9 @@
             <p>Pero el riesgo no desapareció. Siguen los ataques a barcos cerca del estrecho de Ormuz, por donde pasa buena parte del petróleo que se mueve por mar en el mundo, y eso mantiene la tensión sobre el suministro. Trump se reunió este lunes con el primer ministro de Catar, Mohammed bin Abdulrahman Al Thani, mientras funcionarios de Irán se reunían en Teherán con mediadores cataríes para preparar un borrador de acuerdo de paz. Teherán, sin embargo, dice que no negociará a menos que Washington dé pasos prácticos, y altos funcionarios de ambos lados dudan de que un acuerdo sea inminente.</p>
             <p>El alivio se sintió en los mercados: Wall Street subió en la jornada —el Nasdaq avanzó 2.2%, el S&P 500 un 1.9% y el Dow Jones un 1.8%, según datos de media mañana— y el dólar bajó frente a las principales divisas. Para la gente común, un petróleo más barato suele traducirse con el tiempo en menos presión sobre la gasolina y el transporte, y por tanto en menos inflación. Para México, el gobierno presupuesta el barril en 61.8 dólares para 2027, así que un Brent en torno a 94 dólares todavía deja margen, pero una caída sostenida recortaría los ingresos petroleros del país.</p>
             <p>El mercado ahora mira el dato de inflación de Estados Unidos, que se publica el martes y será clave para las decisiones de la Reserva Federal, y si la tregua verbal con Irán se convierte en un acuerdo real o se estanca. La calma de hoy depende de eso: si las negociaciones se rompen, el petróleo puede recuperar en un día lo que perdió en una semana.</p>
-          </article>
+          
+<a class="note-more" href="blog/el-petroleo-se-desploma-casi-5-en-un.html">Leer nota completa →</a>
+</article>
 
           <!-- Espacio publicitario (Google AdSense) · Después de esta nota. -->
           <div class="ad-slot"></div>
@@ -2132,7 +2342,9 @@
             <p>El contexto: en 2018 el mínimo era de 88.36 pesos diarios; hoy es de 315.04, un aumento real de 154%. El salario ya cubre 1.93 veces la línea de pobreza urbana (163.50 pesos diarios), y la meta del gobierno es que llegue a 2.5 canastas básicas en 2030. Casi la mitad de los trabajadores formales registrados en el IMSS, el 48.5%, gana entre 1 y 1.4 salarios mínimos, así que la decisión toca a millones de hogares.</p>
             <p>Y hay un segundo cambio que llega al mismo tiempo: a partir del 1 de enero de 2027 la jornada semanal baja de 48 a 46 horas, sin recorte de sueldo. La combinación de un aumento salarial y menos horas podría elevar el costo de la hora de trabajo hasta 14.35% en 2027, según un cálculo de la plataforma FiscoClic para un escenario de 10% de aumento. Es un escenario, no un dato oficial, pero explica por qué los empresarios piden prudencia.</p>
             <p>El calendario: la Conasami abre su sesión permanente entre el 23 y el 27 de noviembre, recibe propuestas hasta el 30 de noviembre y puede votar a partir del 1 de diciembre. La cifra final se conocerá en diciembre, y con ella, cuánto sube el piso salarial de millones de mexicanos en 2027.</p>
-          </article>
+          
+<a class="note-more" href="blog/salario-minimo-2027-por-primera-vez-desde-2018.html">Leer nota completa →</a>
+</article>
 
           <!-- Espacio publicitario (Google AdSense) · Después de esta nota. -->
           <div class="ad-slot"></div>
@@ -2152,7 +2364,9 @@
             <p>El impacto no se limita a una empresa. Otros estudios han movido las fechas de sus propios juegos para no competir con GTA 6: nadie quiere lanzar su producto la misma semana que el monstruo. Y el efecto se siente hasta en el trabajo: el director de Take-Two, Strauss Zelnick, dijo en abril que "mucha gente va a reportarse enferma el 19 de noviembre". Es una broma, pero apunta a algo real: millones de personas van a faltar al trabajo o a reorganizar su día para jugar.</p>
             <p>El dinero que mueve un lanzamiento así tampoco se queda en un solo bolsillo. Se venden más consolas, más televisiones, más controles, más botanas, más refrescos, más recargas y más internet. El juego no estará en los servicios de suscripción como Game Pass el día del lanzamiento: se vende a precio completo, lo que significa que el gasto es directo y concentrado en esas semanas.</p>
             <p>GTA 6 llega después de más de una década de espera, dos retrasos y un presupuesto que lo convierte en la producción más cara de la historia de los videojuegos. El 19 de noviembre se sabrá si las cifras de los analistas se quedaron cortas o si, por una vez, el juego más esperado de la historia también fue el más rentable.</p>
-          </article>
+          
+<a class="note-more" href="blog/gta-6-sale-en-10-dias-y-mueve.html">Leer nota completa →</a>
+</article>
 
           <!-- Espacio publicitario (Google AdSense) · Después de esta nota. -->
           <div class="ad-slot"></div>
@@ -2171,7 +2385,9 @@
             <p>Por eso el primer paso es medirla en tu propio negocio, no en el promedio del país. Anota cuánto te cuesta hoy hacer tu producto y compáralo con hace tres o seis meses. Si tus costos subieron 5% y tus precios no se movieron, tu margen se achicó 5% sin que nadie te avisara. Revisar tus costos cada mes, aunque sea en una libreta, es la forma más barata de no perder dinero en silencio.</p>
             <p>Cuando los costos suben, tienes tres opciones, y la peor es no hacer nada. Puedes subir tus precios poco a poco, en lugar de un brinco grande que espante a los clientes. Puedes buscar otro proveedor o comprar en mayor cantidad para que te salga más barato. O puedes ajustar lo que vendes: quitar el producto que ya no deja ganancia y empujar el que sí deja. Lo importante es decidir con números, no con coraje ni con miedo.</p>
             <p>La inflación también tiene un lado que juega a tu favor: el dinero que te deben vale menos con el tiempo, y el dinero que debes también. Pero para un negocio chico la regla es una sola: que tus precios y tus costos se muevan juntos. Si el proveedor sube, tu precio tiene que subir también, aunque sea poquito. Un negocio que revisa sus costos cada mes y ajusta sus precios a tiempo no le tiene miedo a la inflación: simplemente la va siguiendo, paso a paso.</p>
-          </article>
+          
+<a class="note-more" href="blog/la-inflacion-por-que-todo-sube-de-precio.html">Leer nota completa →</a>
+</article>
 
           <!-- Espacio publicitario (Google AdSense) · Después de esta nota. -->
           <div class="ad-slot"></div>
@@ -2190,7 +2406,9 @@
             <p>La industria ya está reaccionando. Dos días después de la votación, OpenAI anunció que pagará las facturas eléctricas de sus propios centros de datos, y el Senado de Estados Unidos vota este lunes 9 de noviembre un proyecto que obligaría a los nuevos centros a pagar los costos de red que generan. Anthropic, la empresa detrás de Claude, compró generadores de gas por 1,700 megavatios por 3,400 millones de dólares para asegurar su propia energía, según el Financial Times. La energía se convirtió en el cuello de botella de la IA: ya no basta con tener el mejor modelo, hay que tener de dónde enchufarlo.</p>
             <p>El golpe también se siente en la bolsa. Nvidia, la empresa de chips que es el símbolo del auge de la IA y vale 4.5 billones de dólares, ha perdido todas las ganancias que sus acciones llevaban en el año, en medio de una caída generalizada del sector tecnológico por las dudas sobre si el gasto en IA es sostenible, según Reuters. Y la empresa trae además una investigación de su propio consejo sobre su director general. El mensaje del mercado es el mismo que el de los votantes: la fiesta de la IA ya no se paga sola.</p>
             <p>El debate deja claro que la IA no funciona en el vacío: detrás de cada modelo hay luz, agua y una red eléctrica que alguien tiene que pagar. Si las empresas terminan asumiendo el costo de su propia energía, el precio de las herramientas de IA podría subir o su despliegue hacerse más lento. La discusión también se acerca a México: conforme se instalen más centros de datos en el país, la pregunta de quién paga la electricidad empezará a aparecer en las comunidades donde se construyan.</p>
-          </article>
+          
+<a class="note-more" href="blog/estados-unidos-voto-contra-los-centros-de-datos.html">Leer nota completa →</a>
+</article>
 
           <!-- Espacio publicitario (Google AdSense) · Después de esta nota. -->
           <div class="ad-slot"></div>
@@ -2209,7 +2427,9 @@
             <p>Detrás del buen número hay dos motores. Por un lado, la inversión pública se está recuperando y la inversión privada regresó en los últimos tres meses, sobre todo en obras de ingeniería civil. Por otro, las exportaciones de manufactura —en especial de equipo de cómputo, impulsadas por el auge de la inteligencia artificial en Estados Unidos— dieron un empujón fuerte. Los analistas también advierten que parte del avance se explica por una base de comparación baja: el año pasado fue poco dinámico.</p>
             <p>Pero no todo es fiesta, y aquí está la parte que le importa al bolsillo. La directora de análisis económico de Grupo Financiero BASE, Gabriela Siller, señaló que los indicadores oportunos muestran que el consumo cayó en el tercer trimestre y que el crecimiento responde más a la coyuntura que a una mejora generalizada: sin consumo no hay crecimiento sostenido. Además, persisten riesgos como la revisión del T-MEC, que puede imponer reglas de origen o frenar las ventas de equipo de cómputo a Estados Unidos.</p>
             <p>El balance que dejan los analistas es mixto. Hay más movimiento en la economía —más obra, más industria y más servicios— y las proyecciones apuntan a cerrar 2026 cerca del 2%: Banorte estima 1.9% y Hacienda también ve cerca de 2%. Al mismo tiempo, el consumo todavía se mueve con cautela, un factor que los especialistas seguirán de cerca en la temporada del Buen Fin, del 13 al 17 de noviembre.</p>
-          </article>
+          
+<a class="note-more" href="blog/la-economia-mexicana-crecio-3-2-su-mejor.html">Leer nota completa →</a>
+</article>
 
           <!-- Espacio publicitario (Google AdSense) · Después de esta nota. -->
           <div class="ad-slot"></div>
@@ -2228,7 +2448,9 @@
             <p>¿Y eso qué significa para el bolsillo? Un peso más fuerte abarata todo lo que se compra en dólares: mercancía importada, insumos y hasta algunos productos del súper que dependen del tipo de cambio. Además, la tasa más baja de Banxico es el primer paso para que los créditos —de negocio, de tarjeta o de nómina— empiecen a salir un poco más baratos, aunque eso no se nota de un día para otro.</p>
             <p>Pero no hay que cantar victoria todavía. Los mercados ahora creen que la Reserva Federal de Estados Unidos podría subir sus tasas en diciembre: la probabilidad que le asignan pasó de 75% a 85% tras los datos de empleo. Si eso pasa, el dólar podría volver a subir y el peso, a perder lo ganado.</p>
             <p>El respiro cambiario llega en un momento clave para importadores y para quienes tienen créditos en puerta. Un peso más fuerte abarata la mercancía cotizada en dólares, mientras que el recorte de tasas de Banxico abre la puerta a un financiamiento un poco más barato, aunque los analistas insisten en que el efecto no será inmediato. El lunes 9 de noviembre, cuando reabran los mercados, se verá si la recuperación del peso se sostiene o fue solo un descanso.</p>
-          </article>
+          
+<a class="note-more" href="blog/el-peso-rompio-su-mala-racha-que-significa.html">Leer nota completa →</a>
+</article>
 
           <!-- Espacio publicitario (Google AdSense) · Después de esta nota. -->
           <div class="ad-slot"></div>
@@ -2246,7 +2468,9 @@
             <p>Para México, el cambio no es automáticamente una buena noticia. Analistas consultados por El Financiero advierten que los legisladores demócratas podrían endurecer las posiciones en seguridad fronteriza y combate al crimen, y que la revisión del T-MEC seguirá su curso con presiones comerciales. El tratado entró en su mecanismo de revisiones anuales porque Washington no confirmó su prórroga, así que su futuro se negocia año con año.</p>
             <p>Lo que sí cambia es el freno: el Congreso controla el presupuesto, así que ningún aumento de dinero para la frontera, las deportaciones o el muro podrá aprobarse sin los demócratas. En cambio, los aranceles no dependen del Congreso: el de 25% a los autos importados, vigente desde abril de 2025, lo impuso Trump con una ley de 1962 y el presidente conserva esa facultad.</p>
             <p>Para México, el efecto potencial se mediría en precios y empleos. Si suben los aranceles o se traba el comercio bilateral, subirían los costos de lo importado y podría enfriarse el trabajo en las fábricas que exportan a Estados Unidos. Es un escenario que empresarios y analistas seguirán de cerca en los próximos meses, mientras el nuevo Congreso define su agenda comercial.</p>
-          </article>
+          
+<a class="note-more" href="blog/estados-unidos-cambia-de-congreso-que-significa-para.html">Leer nota completa →</a>
+</article>
 
           <!-- Espacio publicitario (Google AdSense) · Después de esta nota. -->
           <div class="ad-slot"></div>
@@ -2264,7 +2488,9 @@
             <p>Entre enero y septiembre de 2026 entraron 47,164 millones de dólares, 2.1% más que en el mismo periodo de 2025. El problema está en lo que ese dinero compra. El peso se fortaleció frente al dólar y la inflación de septiembre fue de 3.45%, así que al descontar el aumento de precios, el poder de compra del envío promedio cayó alrededor de 2.2% respecto a septiembre de 2025.</p>
             <p>Detrás del freno hay empleos: el Centro de Estudios Monetarios Latinoamericanos señaló que mexicanos en Estados Unidos perdieron trabajos en al menos tres sectores clave, y eso se refleja en menos envíos. BBVA Research ya había advertido que la fortaleza del peso podía reducir lo que realmente rinden las remesas en los hogares.</p>
             <p>Detrás de las cifras hay un efecto directo en los hogares. Muchas familias dependen de ese dinero para el gasto diario, y cuando el envío rinde menos, el consumo se aprieta. El ritmo de llegada de las remesas marca, en buena medida, las semanas fuertes y las semanas flojas del comercio local en las comunidades receptoras.</p>
-          </article>
+          
+<a class="note-more" href="blog/las-remesas-llegaron-con-mas-dolares-pero-compran.html">Leer nota completa →</a>
+</article>
 
           <!-- Espacio publicitario (Google AdSense) · Después de esta nota. -->
           <div class="ad-slot"></div>
@@ -2282,7 +2508,9 @@
             <p>El susto de esta semana tuvo nombre: el 2 de noviembre, Estados Unidos atacó un sistema de defensa aérea iraní en la isla de Qeshm, en la zona de Ormuz. Al día siguiente, el crudo subió más de 1.7%. Irán ofreció reabrir el tránsito por Ormuz en dos días si Washington levantaba el bloqueo, pero hasta ahora no hay acuerdo firmado y las conversaciones siguen con Qatar como mediador.</p>
             <p>El propio Donald Trump reconoció que el precio de la gasolina influyó en el resultado de las elecciones intermedias del 3 de noviembre. La guerra, que empezó a finales de febrero, es una de las causas del precio alto de la gasolina, y la gasolina cara se siente en todo: en el reparto, en los precios del mercado y en el bolsillo del cliente.</p>
             <p>Para tu negocio, la moraleja es práctica: cuando el petróleo sube, sube el costo de mover mercancía. Revisa tus precios de reparto, junta pedidos para no dar vueltas de más y no absorbas todo el aumento en silencio: un ajuste pequeño y explicado a tiempo vale más que perder dinero en cada entrega.</p>
-          </article>
+          
+<a class="note-more" href="blog/el-petroleo-no-da-tregua-que-tiene-que.html">Leer nota completa →</a>
+</article>
 
           <!-- Espacio publicitario (Google AdSense) · Después de esta nota. -->
           <div class="ad-slot"></div>
@@ -2300,7 +2528,9 @@
             <p>La Concanaco Servytur estima una derrama económica de 235 mil millones de pesos, 7.3% más que los 219 mil millones de 2025. De ese total, 79% se generaría en tiendas físicas y 21% en línea. Según la Asociación Mexicana de Venta Online, 77% de los consumidores potenciales ve probable comprar, y lo más buscado será moda (38%) y electrónicos (30%).</p>
             <p>Para los negocios chicos hay dos datos que importan. El registro de comercios es gratuito y cierra el 12 de noviembre, y solo los registrados participan en el Sorteo El Buen Fin del SAT, que este año reparte una bolsa de 500 millones de pesos: 400 millones entre quienes pagan con tarjeta y 100 millones entre los comercios participantes. El sorteo será el 4 de diciembre.</p>
             <p>No necesitas bajar tus precios a la mitad para participar. Arma una promoción clara en tus productos que más se mueven, avísales a tus clientes por WhatsApp con tiempo y cobra con tarjeta para que tus clientes entren al sorteo. El Buen Fin no es solo para las tiendas grandes: es la semana en la que más gente sale a comprar.</p>
-          </article>
+          
+<a class="note-more" href="blog/el-buen-fin-2026-ya-tiene-fecha-13.html">Leer nota completa →</a>
+</article>
 
           <!-- Espacio publicitario (Google AdSense) · Después de esta nota. -->
           <div class="ad-slot"></div>
@@ -2318,7 +2548,9 @@
             <p>Hay dos márgenes que conviene distinguir. El margen bruto es lo que queda después de pagar el producto o el material. El margen neto es lo que queda después de pagar todo lo demás: renta, luz, sueldos y lo que se pierde. Un negocio puede tener buen margen bruto y aun así no ganar nada si sus gastos fijos se lo comen.</p>
             <p>Por eso el precio no se pone mirando solo a la competencia. Primero suma cuánto te cuesta cada venta, luego decide cuánto quieres ganar por cada una y al final compara con lo que cobran los demás. Si tu margen es muy flaco, cualquier mes malo te deja en ceros.</p>
             <p>Revisa tu margen por producto, no en general. Casi siempre hay un producto que te deja buena ganancia y otro que solo ocupa espacio y tiempo. El primero merece tu esfuerzo; el segundo, un nuevo precio o la salida.</p>
-          </article>
+          
+<a class="note-more" href="blog/el-margen-la-ganancia-real-que-queda-en.html">Leer nota completa →</a>
+</article>
 
           <!-- Espacio publicitario (Google AdSense) · Después de esta nota. -->
           <div class="ad-slot"></div>
@@ -2336,7 +2568,9 @@
             <p>El error más común es gastar el dinero de las ventas antes de que lleguen los gastos. Llega la quincena, entra buen dinero, se compra mercancía, se paga algo pendiente y cuando toca la renta, ya no hay. No es que el negocio vaya mal: es que el dinero entró y salió en el orden equivocado.</p>
             <p>La solución es mirar la semana, no el mes. Anota cada lunes cuánto tienes, cuánto esperas cobrar y cuánto tienes que pagar esa semana: renta, proveedores, luz. Si una semana sale en rojo, lo ves con tiempo y puedes mover un pago o apurar un cobro.</p>
             <p>Y una regla de oro: separa el dinero del negocio del dinero de tu casa. Si mezclas las dos cosas, nunca sabrás si tu negocio gana o si tú estás viviendo de él. Págate un sueldo fijo y deja el resto trabajando en el negocio.</p>
-          </article>
+          
+<a class="note-more" href="blog/flujo-de-caja-por-que-un-negocio-puede-2026-11-07.html">Leer nota completa →</a>
+</article>
 
           <!-- Espacio publicitario (Google AdSense) · Después de esta nota. -->
           <div class="ad-slot"></div>
@@ -2354,7 +2588,9 @@
             <p>Un ejemplo de todos los días: compras mercancía que se queda meses en el estante. Ese dinero parado pudo haber comprado lo que sí se vende, o pudo haber pagado una deuda. El costo no es solo lo que pagaste: es la ganancia que dejaste de tener.</p>
             <p>Lo mismo pasa con el tiempo. Una tarde dedicada a un cliente que regatea y nunca compra es una tarde que no dedicaste a los clientes que sí vuelven. El tiempo es el recurso más escaso de un negocio chico, y no se recupera.</p>
             <p>Antes de gastar, pregúntate: ¿qué gano si lo hago y qué pierdo si no lo hago? No se trata de no gastar, sino de gastar donde el dinero y el tiempo rinden más.</p>
-          </article>
+          
+<a class="note-more" href="blog/costo-de-oportunidad-lo-que-pierdes-cuando-eliges.html">Leer nota completa →</a>
+</article>
 
           <!-- Espacio publicitario (Google AdSense) · Después de esta nota. -->
           <div class="ad-slot"></div>
@@ -2372,7 +2608,9 @@
             <p>Por eso competir solo por ser el más barato es una trampa. Siempre habrá alguien más barato que tú, y el cliente que solo busca precio se va con el primero que baje un peso. En cambio, el cliente que valora lo que le das —el trato, la constancia, la confianza— se queda y hasta recomienda.</p>
             <p>Subir el valor no siempre cuesta dinero. Saludar por el nombre, recordar lo que le gusta, tener el local limpio, cumplir lo prometido: eso es valor, y eso es lo que hace que un cliente pague un poco más sin pensarlo dos veces.</p>
             <p>La próxima vez que pienses en bajar tu precio, piensa mejor en subir tu valor. Un negocio que se vende por valor gana más y sufre menos que uno que se vende por precio.</p>
-          </article>
+          
+<a class="note-more" href="blog/precio-y-valor-no-son-lo-mismo-por.html">Leer nota completa →</a>
+</article>
 
           <!-- Espacio publicitario (Google AdSense) · Después de esta nota. -->
           <div class="ad-slot"></div>
@@ -2390,7 +2628,9 @@
             <p>La familia fue creciendo sala por sala: en 1972 nacieron los Cinemas Gemelos y en 1973 empezó la expansión con el nombre de Multicinemas. Durante más de veinte años, el negocio fue sumar salas y aprender qué quería el público: comodidad, varias películas a la vez y horarios para todos.</p>
             <p>El gran salto llegó en 1994, cuando nació la marca Cinépolis y con ella las primeras salas tipo multiplex, varias pantallas en un mismo lugar. Ese cambio transformó el cine en México y llevó a la empresa a otros países de América, Europa, Medio Oriente y Asia.</p>
             <p>Hoy Cinépolis es una de las cadenas que más boletos vende en el mundo, con 889 complejos según datos de octubre de 2026, y sigue dirigida por la familia: Alejandro Ramírez Magaña, nieto del fundador, es su director general. La lección para un negocio chico es clara: no se empieza grande, se empieza bien, y se crece mejorando la experiencia del cliente, sala por sala.</p>
-          </article>
+          
+<a class="note-more" href="blog/de-una-sala-en-morelia-a-los-cines.html">Leer nota completa →</a>
+</article>
 
           <!-- Espacio publicitario (Google AdSense) · Después de esta nota. -->
           <div class="ad-slot"></div>
@@ -2408,7 +2648,9 @@
             <p>Después de la Segunda Guerra Mundial, sus clientes no tenían dinero para comprar de contado. Padre e hijo tomaron entonces una decisión que cambió todo: invirtieron sus ahorros en vender muebles a crédito, en cómodos abonos semanales, confiando en la palabra del cliente. La tiendita se convirtió en una mueblería con sistema de crédito, y los clientes empezaron a llamarla por el apellido de la familia: Coppel.</p>
             <p>El crédito a la palabra funcionó porque se basaba en conocer al cliente y en la confianza mutua. En 1965 la empresa se constituyó como Almacenes Coppel y en 1992 adoptó oficialmente el nombre Coppel. Con los años sumó ropa, calzado, banco y Afore, y hoy tiene miles de puntos de venta en México y Argentina.</p>
             <p>El caso de Coppel quedó como uno de los ejemplos más conocidos de crédito popular en México. Más que el financiamiento en sí, lo que distinguió a la tienda fue la confianza en la palabra del cliente, en una época en la que pocas empresas vendían a quienes no podían pagar de contado.</p>
-          </article>
+          
+<a class="note-more" href="blog/de-una-tiendita-llamada-el-regalo-a-coppel.html">Leer nota completa →</a>
+</article>
 
           <!-- Espacio publicitario (Google AdSense) · Después de esta nota. -->
           <div class="ad-slot"></div>
@@ -2426,7 +2668,9 @@
             <p>La idea era sencilla: estar cerca, abrir todos los días y vender lo que la gente necesita a cualquier hora. Al año siguiente, en 1979, ya había tiendas en Chihuahua, Hermosillo y Mexicali. Con el tiempo, Oxxo dejó de vender solo cerveza y fue sumando café, comida, pagos de servicios, recargas y envíos de dinero.</p>
             <p>Hoy Oxxo es una de las redes de tiendas de conveniencia más grandes de América Latina: al 30 de junio de 2026 tenía 24,708 tiendas solo en México, como parte de FEMSA. La primera tienda, la de la calle Lindavista en Guadalupe, sigue dando servicio.</p>
             <p>La expansión de Oxxo se explica, en buena parte, por la proximidad. Abrir cuando los demás cierran, estar en la esquina de todos los días y sumar servicios que la gente ya busca —pagos, recargas y envíos— convirtió a estas tiendas en un hábito cotidiano para millones de personas.</p>
-          </article>
+          
+<a class="note-more" href="blog/oxxo-nacio-para-vender-cerveza-de-una-tienda.html">Leer nota completa →</a>
+</article>
 
           <!-- Espacio publicitario (Google AdSense) · Después de esta nota. -->
           <div class="ad-slot"></div>
@@ -2444,7 +2688,9 @@
             <p>Los chiles gustaron tanto que los clientes empezaron a pedirlos por separado. Vicente empezó a venderlos a granel y después en latas de tres kilos, envasados a mano. Sin planearlo, el acompañamiento se había convertido en el negocio. En 1937 abrió su primera fábrica en la colonia Estrella, también en la Ciudad de México.</p>
             <p>Con los años llegaron los frijoles, las verduras, las salsas y las exportaciones: en 1975 La Costeña empezó a vender en Estados Unidos. En 2025, la empresa registró ingresos por 18,970 millones de pesos, con unos 4,500 empleados.</p>
             <p>La lección es perfecta para un negocio chico: el producto que hoy regalas o das como acompañamiento puede ser tu mejor negocio. Vicente no inventó los chiles: escuchó a sus clientes, notó qué pedían una y otra vez y lo convirtió en su producto principal. Escuchar vale más que adivinar.</p>
-          </article>
+          
+<a class="note-more" href="blog/la-costena-los-chiles-de-la-trastienda-que.html">Leer nota completa →</a>
+</article>
 
           <!-- Espacio publicitario (Google AdSense) · Después de esta nota. -->
           <div class="ad-slot"></div>
@@ -2462,7 +2708,9 @@
             <p>Primero, suma todo lo que te cuesta cada venta: el producto o el material, lo que gastas en hacerlo y una parte de tus gastos fijos, como la renta y la luz. Si no cuentas todo, tu precio miente y tu ganancia se evapora sin que sepas dónde.</p>
             <p>Segundo, decide cuánto quieres ganar por cada venta. No es avaricia: es lo que te permite seguir abierto, reponer mercancía y pagarte un sueldo. Un precio sin ganancia es un negocio que se acaba solo.</p>
             <p>Tercero, mira lo que cobran los demás, pero no copies sin pensar. Si tu precio queda arriba, explica por qué vale más: mejor trato, mejor calidad, más confianza. Y nunca compitas solo por ser el más barato: ese camino solo tiene un ganador, y nunca es el negocio chico.</p>
-          </article>
+          
+<a class="note-more" href="blog/como-ponerle-precio-a-tu-producto-sin-regalar.html">Leer nota completa →</a>
+</article>
 
           <!-- Espacio publicitario (Google AdSense) · Después de esta nota. -->
           <div class="ad-slot"></div>
@@ -2480,7 +2728,9 @@
             <p>El primer paso es notarlo a tiempo. Si un cliente venía cada semana y lleva un mes sin aparecer, ahí hay una señal. No esperes tres meses: entre más pasa, más frío está el recuerdo. Un mensaje sencillo por WhatsApp puede bastar: salúdalo por su nombre y dale un motivo concreto para volver.</p>
             <p>El motivo tiene que ser real: una promoción con fecha, un producto nuevo que le puede gustar o un detalle por su regreso. Evita el mensaje genérico de "te extrañamos": nadie vuelve por un mensaje genérico. Vuelve por algo que le conviene.</p>
             <p>Y si no responde, no insistas cada semana. Un recordatorio amable al mes es suficiente. El cliente que vuelve después de un mensaje se convierte en uno de los más leales: sabe que lo notaste.</p>
-          </article>
+          
+<a class="note-more" href="blog/el-cliente-que-no-vuelve-como-recuperarlo-antes.html">Leer nota completa →</a>
+</article>
 
           <!-- Espacio publicitario (Google AdSense) · Después de esta nota. -->
           <div class="ad-slot"></div>
@@ -2498,7 +2748,9 @@
             <p>El mejor momento para pedir una recomendación es cuando el cliente está contento: justo después de un buen servicio, cuando te da las gracias o cuando te dice que le gustó. Ahí, una frase sencilla funciona: "Si te gustó, pásale mi número a quien lo necesite". No es pena: es dejarle la puerta abierta.</p>
             <p>Ayuda a que te recomienden: ten tu número de WhatsApp a la vista, en la tarjeta o en un letrero, y responde rápido cuando alguien escribe. Un cliente que recomienda y su amigo no recibe respuesta es una recomendación perdida.</p>
             <p>Y premia al que trae gente. No tiene que ser dinero: un detalle, un descuento o un producto de regalo en su décima visita. Cuando recomendarte también le conviene a tu cliente, el boca en boca se vuelve tu mejor vendedor.</p>
-          </article>
+          
+<a class="note-more" href="blog/vende-mas-sin-gastar-en-publicidad-el-boca.html">Leer nota completa →</a>
+</article>
 
           <!-- Espacio publicitario (Google AdSense) · Después de esta nota. -->
           <div class="ad-slot"></div>
@@ -2516,7 +2768,9 @@
             <p>La solución no necesita un contador: dos sobres, dos cuentas o dos apartados en la misma cuenta. Todo lo que entra por ventas va al sobre del negocio. De ahí salen los gastos del negocio y nada más. El dinero de la casa sale de un solo lugar: tu sueldo.</p>
             <p>Págate un sueldo fijo, aunque sea modesto, y respétalo como si fuera el de un empleado. Cuando te pagas siempre lo mismo, sabes cuánto te cuesta tu negocio y cuánto te deja. Y cuando el negocio gana más, ese extra se queda para crecer, no se gasta sin plan.</p>
             <p>El negocio que separa su dinero tiene dos ventajas: sabe cuánto gana de verdad y siempre tiene para reponer mercancía. El que no lo hace, trabaja mucho y siempre anda en ceros.</p>
-          </article>
+          
+<a class="note-more" href="blog/separa-el-dinero-de-tu-casa-y-el.html">Leer nota completa →</a>
+</article>
 
           <!-- Espacio publicitario (Google AdSense) · Después de esta nota. -->
           <div class="ad-slot"></div>
@@ -2534,7 +2788,9 @@
             <p>La clave está en cuándo pedirla. No lo hagas cuando el cliente tiene prisa ni cuando algo salió mal. Pídela cuando está contento: cuando te dice "qué rico quedó", cuando vuelve por segunda vez en la semana o cuando te trae a un amigo. Ahí, un simple "¿me ayudarías recomendándonos?" abre la puerta.</p>
             <p>Dale algo concreto para compartir: tu tarjeta, tu WhatsApp o el nombre de tu negocio escrito en un papelito. La gente recomienda más cuando le pones fácil el cómo. Y si te dejan una buena opinión en redes, contéstala con un gracias: eso anima a otros a opinar también.</p>
             <p>¿Y si llega una mala opinión? No la borres ni te pelees: contesta con calma, ofrece resolverlo y aprende de ahí. Un negocio que responde bien a una queja genera más confianza que uno que nunca tiene ninguna.</p>
-          </article>
+          
+<a class="note-more" href="blog/tu-mejor-vendedor-es-el-cliente-contento-como.html">Leer nota completa →</a>
+</article>
 
           <!-- Espacio publicitario (Google AdSense) · Después de esta nota. -->
           <div class="ad-slot"></div>
@@ -2553,7 +2809,9 @@
             <p>Lorenzo entendió desde el primer día que el pan industrial necesitaba marca, no solo sabor. El nombre salió de una lluvia de ideas entre los socios: iba a llamarse Súper Pan, pero no se pudo registrar, y al final quedó Bimbo, una mezcla de "Bambi" y "Bingo". La ilustradora Anita Mata creó al Osito Bimbo, que se convirtió en el símbolo de confianza que generaciones de mexicanos reconocen hasta hoy. Y desde el inicio pusieron especial énfasis en la distribución: enviaban el pan por ferrocarril y en camiones al interior del país, para que llegara fresco y a tiempo.</p>
             <p>Hoy, casi 80 años después, Grupo Bimbo es la panificadora más grande del mundo, con presencia en más de 30 países. Empezó como un negocio familiar chico, con cuatro productos y un local que ni siquiera era propio. Su historia suele citarse como ejemplo de cómo una presentación distinta, una marca fácil de recordar y una distribución puntual pueden pesar más que un gran presupuesto inicial.</p>
             <p>Historiadores empresariales destacan tres decisiones de aquellos primeros años: un empaque que dejaba ver el producto, un nombre breve que se quedó en la memoria colectiva y una red de reparto que llegaba a tiempo. Bimbo no creció por tener más dinero que sus competidores, sino por sostener esos tres detalles durante décadas.</p>
-          </article>
+          
+<a class="note-more" href="blog/de-cuatro-panes-a-la-panificadora-mas-grande.html">Leer nota completa →</a>
+</article>
 
           <!-- Espacio publicitario (Google AdSense) · Después de esta nota. -->
           <div class="ad-slot"></div>
@@ -2572,7 +2830,9 @@
             <p>Para los negocios chicos, el tipo de cambio no es un tema lejano: todo lo que se compra en dólares —mercancía, insumos, refacciones— se encarece o se abarata con cada movimiento del peso. Ocho semanas de depreciación significaron costos más altos para quien importa o compra productos que se cotizan en dólares. Esta semana, por fin, la presión aflojó un poco.</p>
             <p>El recorte de Banxico tiene dos caras. Por un lado, abarata el crédito: si la tasa baja, los préstamos para un negocio —para surtir inventario o comprar equipo— pueden salir más baratos en los próximos meses. Por otro, llega con la inflación al alza, en 3.62 por ciento, y con analistas que cuestionan si era el momento de bajar la tasa.</p>
             <p>La presidenta Claudia Sheinbaum respaldó la decisión del banco central, mientras la Bolsa Mexicana también tuvo una buena semana: su índice principal subió 2.31 por ciento y cerró en 71,393 puntos. El peso se movió a favor esta semana, pero el panorama sigue siendo incierto: los mercados estarán atentos a si el tipo de cambio mantiene la recuperación o vuelve a presionarse en las próximas sesiones.</p>
-          </article>
+          
+<a class="note-more" href="blog/el-peso-respira-rompe-ocho-semanas-de-perdidas.html">Leer nota completa →</a>
+</article>
 
           <!-- Espacio publicitario (Google AdSense) · Después de esta nota. -->
           <div class="ad-slot"></div>
@@ -2591,7 +2851,9 @@
             <p>La crisis se volvió política cuando el presidente Santiago Peña presentó su renuncia, antes de enfrentar un juicio político en el Congreso, en medio de los cuestionamientos por los recursos públicos que recibió el banco durante su gobierno.</p>
             <p>Los mercados ya lo sienten: en apenas una semana el dólar subió 12,3% frente al guaraní, de 5.661 a 6.358 guaraníes, y el riesgo país medido por JP Morgan llegó a 144 puntos básicos.</p>
             <p>Aun así, los analistas dicen que los fundamentos de Paraguay siguen sólidos, con un crecimiento de 6,6% en 2025 y una inflación interanual de 1,7% en octubre, por debajo de la meta del Banco Central. El problema, coinciden, es la confianza.</p>
-          </article>
+          
+<a class="note-more" href="blog/paraguay-en-crisis-un-banco-quebrado-un-presidente.html">Leer nota completa →</a>
+</article>
 
           <!-- Espacio publicitario (Google AdSense) · Después de esta nota. -->
           <div class="ad-slot"></div>
@@ -2610,7 +2872,9 @@
             <p>Lo que más llama la atención es que estas herramientas ya no piden sistemas caros ni contratos complicados. Hay opciones que funcionan <strong>sin internet</strong> y guardan la información en el propio teléfono del negocio, algo clave en zonas donde la conexión falla o el presupuesto es justo.</p>
             <p>Los comerciantes consultados coinciden en un punto: el cliente nota cuando lo conocen. Que su tarjeta lleve su nombre, que su visita quede registrada y que a las diez visitas haya un premio, convierte una compra normal en una relación de confianza.</p>
             <p>La tendencia apenas empieza, pero ya se observa en distintas ciudades. En un mercado donde competir con las grandes cadenas es difícil, los comercios pequeños están encontrando en la fidelización digital una herramienta accesible para mantener cerca a su clientela habitual.</p>
-          </article>
+          
+<a class="note-more" href="blog/la-fidelizacion-digital-gana-terreno-entre-los-negocios.html">Leer nota completa →</a>
+</article>
 
           <!-- Espacio publicitario (Google AdSense) · Después de esta nota. -->
           <div class="ad-slot"></div>
@@ -2629,7 +2893,9 @@
             <p>Además, el cliente fiel hace un trabajo que ninguna publicidad paga igual: <strong>recomienda el negocio</strong>. Habla de él con su familia, sus vecinos y sus compañeros de trabajo, y esa recomendación llega con confianza incluida.</p>
             <p>El problema es que muchos negocios no saben quiénes son sus clientes frecuentes. Sin un registro de visitas, el mejor cliente puede dejar de venir un mes entero y nadie lo nota hasta que ya es tarde para recuperarlo.</p>
             <p>Por eso cada vez más dueños llevan la cuenta de visitas y premian la constancia. No se trata de regalar por regalar, sino de reconocer a quien sostiene el negocio semana a semana: ese cliente que vuelve es, al final, el activo más valioso del barrio.</p>
-          </article>
+          
+<a class="note-more" href="blog/el-cliente-que-vuelve-vale-mas-que-el.html">Leer nota completa →</a>
+</article>
 
           <!-- Espacio publicitario (Google AdSense) · Después de esta nota. -->
           <div class="ad-slot"></div>
@@ -2648,7 +2914,9 @@
             <p>El cambio llegó con el celular. Hoy el registro se hace en segundos: el cliente recibe su <strong>tarjeta digital con QR</strong>, y en cada visita basta escanearla para sumar la visita. Nada de papel, nada de sellos y nada que se pueda perder en la lavadora.</p>
             <p>Pero la diferencia más grande no es el QR, son los números. Con el registro en el celular, el dueño puede ver <strong>estadísticas claras</strong>: quiénes son sus mejores clientes, qué días se llena más y quién no ha venido en un mes. La libreta guardaba datos; el celular los explica.</p>
             <p>De la libreta al celular hay una misma idea de fondo: conocer a la clientela. Lo que cambió es la herramienta, y con ella la posibilidad de que un negocio chico tome decisiones con datos, como antes solo podían hacerlo las empresas grandes.</p>
-          </article>
+          
+<a class="note-more" href="blog/de-la-libreta-al-celular-asi-cambio-el.html">Leer nota completa →</a>
+</article>
 
           <!-- Espacio publicitario (Google AdSense) · Después de esta nota. -->
           <div class="ad-slot"></div>
@@ -2805,10 +3073,14 @@
             Android.
           </p>
           <div class="download-actions">
-            <button type="button" class="btn btn-soon" disabled aria-disabled="true">
-              <i data-lucide="clock"></i>
-              Próximamente
-            </button>
+            <div class="waitlist-wrap waitlist-wrap--download">
+              <form id="lista-espera-descargar" class="waitlist-form" data-waitlist-form>
+                <input type="email" required placeholder="Tu correo electrónico" aria-label="Tu correo electrónico" autocomplete="email" />
+                <button type="submit" class="btn btn-gold">Avísame cuando esté lista</button>
+              </form>
+              <p class="waitlist-confirm" data-waitlist-confirm hidden role="status">¡Listo! Se abrió tu correo para confirmar: revísalo y envíalo.</p>
+              <p class="waitlist-direct"><a href="mailto:contacto@frecliente.com">o escríbenos directo a contacto@frecliente.com</a></p>
+            </div>
             <a class="btn btn-facebook" href="https://www.facebook.com/profile.php?id=61595985346440" target="_blank" rel="noopener noreferrer">
               <i data-lucide="facebook"></i>
               Síguenos en Facebook
@@ -2985,6 +3257,11 @@
       </div>
     </footer>
 
+    <!-- ================= CTA FIJO EN MÓVIL ================= -->
+    <div class="mobile-cta-bar">
+      <a class="btn btn-gold" href="#lista-espera" data-scroll-waitlist>Avísame cuando esté lista</a>
+    </div>
+
     <!-- ================= BANNER DE COOKIES ================= -->
     <div class="cookie-banner" id="cookie-banner" role="region" aria-label="Aviso de cookies" hidden>
       <div class="cookie-banner-inner">
@@ -3135,6 +3412,39 @@
               toggle.focus();
             }
           });
+        })();
+
+        // ---------- Lista de espera (mailto, sin backend) ----------
+        (function initWaitlist() {
+          var forms = document.querySelectorAll("[data-waitlist-form]");
+          for (var w = 0; w < forms.length; w++) {
+            forms[w].addEventListener("submit", function (event) {
+              event.preventDefault();
+              var input = this.querySelector('input[type="email"]');
+              var email = input ? input.value.trim() : "";
+              if (!email) { if (input) input.focus(); return; }
+              var subject = encodeURIComponent("Quiero entrar a la lista de espera de Frecliente");
+              var body = encodeURIComponent("Mi correo es: " + email + "\n\nQuiero que me avisen cuando Frecliente esté lista para descargar.");
+              window.location.href = "mailto:contacto@frecliente.com?subject=" + subject + "&body=" + body;
+              var wrap = this.parentNode;
+              var confirm = wrap ? wrap.querySelector("[data-waitlist-confirm]") : null;
+              if (confirm) { confirm.hidden = false; }
+            });
+          }
+          var waitlistTriggers = document.querySelectorAll("[data-scroll-waitlist]");
+          for (var t = 0; t < waitlistTriggers.length; t++) {
+            waitlistTriggers[t].addEventListener("click", function (event) {
+              event.preventDefault();
+              showTab("inicio", { keepScroll: true });
+              var form = document.getElementById("lista-espera");
+              if (form) {
+                form.scrollIntoView({ behavior: "smooth", block: "center" });
+                var input = form.querySelector('input[type="email"]');
+                if (input) { setTimeout(function () { try { input.focus({ preventScroll: true }); } catch (e) { input.focus(); } }, 350); }
+              }
+              try { window.history.pushState(null, "", "#lista-espera"); } catch (e) {}
+            });
+          }
         })();
 
         // "Cómo funciona": va a la pestaña Inicio y baja a esa sección
