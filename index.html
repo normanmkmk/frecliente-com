@@ -221,12 +221,6 @@
 
       /* ---------- Phone mock ---------- */
       .phone-zone { display: flex; justify-content: center; }
-      .phone-figure { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 14px; }
-      .phone-img { display: block; width: 100%; height: auto; border-radius: 28px; object-fit: cover; }
-      .phone-caption { color: var(--ink-faint); font-size: 0.85rem; font-weight: 600; text-align: center; margin: 0; }
-      .panel-shot { display: flex; justify-content: center; margin: 0 0 36px; }
-      .panel-shot .phone { transform: none; }
-      .step-shot { display: block; width: min(190px, 100%); height: auto; margin: 20px auto 0; border-radius: 20px; border: 1px solid rgba(125, 190, 248, 0.35); box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35); object-fit: cover; }
       .phone {
         width: min(300px, 82vw);
         background: #0a1220;
@@ -241,6 +235,10 @@
         border-radius: 28px; padding: 18px 16px 20px;
         min-height: 520px;
       }
+      .phone-brand { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 22px; text-align: center; }
+      .phone-brand img { width: 128px; height: 128px; border-radius: 25%; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45); }
+      .phone-brand-name { font-size: 1.7rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1; }
+      .phone-brand-name span { color: var(--accent); }
       .phone-head { display: flex; align-items: center; gap: 9px; margin-bottom: 16px; }
       .phone-head img { width: 30px; height: 30px; border-radius: 25%; }
       .phone-head .biz { font-weight: 800; font-size: 0.95rem; }
@@ -912,12 +910,12 @@
         </div>
 
         <div class="phone-zone">
-          <figure class="phone-figure">
-            <div class="phone">
-              <img class="phone-img" src="assets/captura-escaner.png" alt="Captura real del Escáner de Frecliente" width="1080" height="1920" loading="lazy" />
+          <div class="phone">
+            <div class="phone-screen phone-brand">
+              <img src="assets/logo-mascota.png" alt="Frecliente" />
+              <div class="phone-brand-name">Fre<span>cliente</span></div>
             </div>
-            <figcaption class="phone-caption">Captura real del Escáner</figcaption>
-          </figure>
+          </div>
         </div>
       </div>
     </header>
@@ -932,19 +930,16 @@
             <div class="num">1</div>
             <h3>Registra al cliente</h3>
             <p>Escribe su nombre y su celular en la pestaña Registro. En menos de 10 segundos queda registrado con su propio ID, por ejemplo FRE-0001.</p>
-            <img class="step-shot" src="assets/captura-registro.png" alt="Captura real del registro de un cliente" width="1080" height="1920" loading="lazy" />
           </div>
           <div class="step">
             <div class="num">2</div>
             <h3>Entrégale su tarjeta con QR</h3>
             <p>Su tarjeta digital se genera sola y se la compartes por WhatsApp como imagen, con su nombre, su ID y su código QR. Puedes elegir sus colores y textura.</p>
-            <img class="step-shot" src="assets/captura-tarjeta-qr.png" alt="Captura real de la tarjeta digital con QR" width="1080" height="1920" loading="lazy" />
           </div>
           <div class="step">
             <div class="num">3</div>
             <h3>Escanea en cada visita</h3>
             <p>Cuando vuelva, apunta la cámara a su QR desde la pestaña Escáner y la visita se suma al instante. También puedes sumarla a mano desde su perfil.</p>
-            <img class="step-shot" src="assets/captura-escaner.png" alt="Captura real del Escáner" width="1080" height="1920" loading="lazy" />
           </div>
         </div>
       </div>
@@ -955,11 +950,6 @@
       <div class="wrap">
         <h2>El Panel: tu negocio, en números claros</h2>
         <p class="section-lede">Frecliente lee tus visitas y te las explica en español sencillo: qué va bien, quién está dejando de venir y qué puedes hacer hoy.</p>
-        <div class="panel-shot">
-          <div class="phone">
-            <img class="phone-img" src="assets/captura-panel.png" alt="Captura real del Panel de Frecliente" width="1080" height="1920" loading="lazy" />
-          </div>
-        </div>
         <div class="features">
           <div class="feature">
             <div class="ic"><i data-lucide="calendar-days"></i></div>
